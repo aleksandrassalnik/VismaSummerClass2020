@@ -1,0 +1,76 @@
+1. What is a DOCTYPE?
+Doctype is an instruction that tells browser how to compile the document (what markup language or version to use i.e. HTML5 or XML)
+
+
+2. How does the web work? (https://github.com/vasanthk/how-web-works)
+Firstly, when you type the link the browser parses the URL (looks what protocol is used http or https and retrieves main index page)
+Then server tries to find requested domains IP address by checking it's cache and "asking" other DNS servers.
+Once IP address is found it establishes connection by opening a socket and making a handshake.
+Once the connection is successfull browser "downloads" the page, parses HTML and renders it.
+
+3. Do older html files work on newer browsers?
+Yes, older html files can work on newer browsers, but some of the features might not, because they are outdated.
+
+4. What are the differences between different DOCTYPES (xHTML, HTML 4.01, HTML5)?
+The main differences between different doctypes is their layout, rules and tags. For example in HTML 4.01 closing tags are optional in XHTML all tags needs to be closed.
+In HTML5 we have alot of new elements/tags compared to HTML4.01 and xHTML
+
+5. Do all HTML tags come in pairs?
+No, we also have tags like <image>, <br>, <hr> and others. 
+
+6. Why should you use different HTML5 elements in your page? What is semantic HTML? (https://www.internetingishard.com/html-and-css/semantic-html/)
+As written in the article, we use different elements because they have their own purpose and add more meaning in the overall layout of the website.
+Also they make it easier for search engines to identify different parts of your website which in result makes it easier to maintain website.
+Semantic HTML is using specific tags instead of <div> elements that are made for its purpose 
+(i.e. we can use semantic tags like summary to show only description of paragraph)
+
+7. Why is SEO important? What ways are there to utilize it?
+SEO - search engine optimisation is important for the website visibility while searching. 
+We can utilize it by indexing the page, using correct meta tags (i.e. using few keywords that describes your page content rather than writing essays),
+including phrases in website that might be searched.
+
+8. Should you put quotes around attribute values? Why?
+As it is optional to use quotes around attribute values, it is a good practice. In that way you can use spaces between values and code will become more readable.
+
+9. How do you insert a text comment in html code?
+By using <!-- and --> at the end of the comment.
+
+10. What does CSS stand for?
+Cascading style sheets.
+
+11. What are style sheets?
+Style sheet is a list of rules that tells how HTML code should be rendered.
+
+12. What is CSS positioning? What are the differences between them?
+Absolute, static, fixed, relative, sticky.
+Absolute - an element with this position is displayed relative to any parent element that's not static.
+If there's no such element it displays positioned relative to body element and moves with page scrolling
+
+Static - all elements are displayed static by default. It is not positioned in any special way.
+
+Fixed - element with fixed position is displayed relative to viewport and doesn't move anywhere even while scrolling
+
+Relative - element with relative position is displayed relative to it's parent element.
+
+Sticky - element with sticky position is displayed based on user's scroll position. It toggles between relative and fixed positions.
+
+
+
+13. What are CSS vendor prefixes? Why are they used?
+-webkit, -moz, -ms, -o. They are used because some browsers might not support some css elements and break website. 
+
+14. What is the range for font-weight value?
+It can be between 1 and 1000. Also font-weight values can be normal and bold.
+
+15. Can several selectors with class names be grouped together?
+Yes
+
+16. What is responsive web design and why it’s important today?
+Responsive design is a website that adjusts to different viewport sizes.
+It is important nowadays because we more and more use our smartphones to browse different websites.
+
+17. What are different units for CSS size properties?
+There are many different css units that are grouped as absolute and relative lengths.
+As absolute units we mostly use pixels (px), but there are units like cm, mm, in, pt and pc.
+For relative units we can use em, ex, ch, rem, vw, vh, vmin, vmax and %.
+
