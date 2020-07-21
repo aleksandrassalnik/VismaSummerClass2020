@@ -30,7 +30,7 @@ body {
     background-color: rgb(15, 15, 39);
   }
 
-  /* Left pannel css */
+  /* Left panel css */
 
   #left {
     grid-area: left;
@@ -48,7 +48,7 @@ body {
     margin: 25px auto;
   }
 
-  /* Right pannel css */
+  /* Right panel css */
 
   #right {
     grid-area: right;
@@ -56,7 +56,7 @@ body {
     height: 100%;
   }
 
-  /* Main pannel css */
+  /* Main panel css */
 
   #main {
     grid-area: main;
@@ -71,6 +71,7 @@ body {
     height: 4rem;
   }
 
+  /* Centers divs with selections */
   #category,
   #page {
     border-bottom: 2px solid rgb(238, 237, 237);
@@ -100,10 +101,12 @@ body {
     border-bottom: 2px solid rgb(238, 237, 237);
   }
 
+  /* Colors every secont element starting from the first one */
   .topic:nth-child(2n-1) {
     background-color: rgb(252, 250, 250);
   }
 
+  /* Colors  answer icons with every secont element*/
   .topic:nth-child(2n-1) .answers {
     background-color: rgb(128, 182, 151);
   }
@@ -114,11 +117,11 @@ body {
     padding: 1rem;
   }
 
+  /* Shaped tag elements, margins push them down instead of text. Width stands instead of text that would be inside*/
   .tag {
     border: 2px solid rgb(238, 237, 237);
     width: 50px;
     border-radius: 13px;
-    float: left;
     background-color: rgb(252, 250, 250);
     height: 25px;
     display: inline-block;
