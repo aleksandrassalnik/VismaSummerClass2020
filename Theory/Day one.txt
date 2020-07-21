@@ -1,7 +1,6 @@
 1. What is a DOCTYPE?
 Doctype is an instruction that tells browser how to compile the document (what markup language or version to use i.e. HTML5 or XML)
 
-
 2. How does the web work? (https://github.com/vasanthk/how-web-works)
 Firstly, when you type the link the browser parses the URL (looks what protocol is used http or https and retrieves main index page)
 Then server tries to find requested domains IP address by checking it's cache and "asking" other DNS servers.
@@ -73,4 +72,3 @@ It is important nowadays because we more and more use our smartphones to browse 
 There are many different css units that are grouped as absolute and relative lengths.
 As absolute units we mostly use pixels (px), but there are units like cm, mm, in, pt and pc.
 For relative units we can use em, ex, ch, rem, vw, vh, vmin, vmax and %.
-
