@@ -1,0 +1,113 @@
+@media only screen and (max-width: 1000px) {
+  /* Navbar css */
+  #navSearch {
+    margin: auto;
+  }
+
+  #navButtons {
+    width: 5rem;
+    padding: 29px 0;
+    margin: 0;
+  }
+
+  /* Checkbox sliders */
+
+  #leftPanelSlider:focus,
+  #rightPanelSlider:focus {
+    outline: 0;
+  }
+
+  /* Checkbox sliders appearance */
+  #leftPanelSlider,
+  #rightPanelSlider {
+    -webkit-appearance: none;
+    position: fixed;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+    margin: 0;
+    top: 7%;
+    margin-top: 2rem;
+    height: 2rem;
+    padding: 2rem 0.75rem;
+    border: 1px solid rgb(238, 237, 237);
+  }
+
+  #leftPanelSlider {
+    background-color: rgb(35, 35, 59);
+  }
+
+  #rightPanelSlider {
+    background-color: rgb(15, 15, 39);
+  }
+
+  #leftPanelSlider:checked + #leftPanel,
+  #rightPanelSlider:checked + #rightPanel {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+
+  #leftPanelSlider:checked,
+  #rightPanelSlider:checked {
+    margin-left: 50%;
+  }
+
+  #rightPanelSlider {
+    margin-top: 7rem;
+    top: 7%;
+  }
+
+  #rightPanel #ask {
+    display: flex;
+    z-index: 1;
+  }
+
+  /* Adds animation on slider and panel */
+
+  #leftPanel,
+  #rightPanel,
+  #leftPanelSlider,
+  #rightPanelSlider {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+  }
+
+  #leftPanel,
+  #rightPanel {
+    position: fixed;
+    top: 58px;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+  }
+
+  /* Left panel css */
+
+  #leftPanel {
+    background-color: white;
+    z-index: 1;
+    width: 50%;
+    scale: 0;
+  }
+
+  /* Right panel css */
+
+  #rightPanel {
+    margin: 0;
+    z-index: 1;
+    width: 50%;
+  }
+
+  .question {
+    margin: 105px auto 10px auto;
+  }
+
+  /* Shaped tag elements, margins push them down instead of text. Width stands instead of text that would be inside*/
+  .tag {
+    margin: 0 15px 0 0;
+  }
+}

@@ -4,55 +4,60 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="big.css">
-        <link rel="stylesheet" href="medium.css">
-        <link rel="stylesheet" href="small.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/big.css">
+        <link rel="stylesheet" href="/css/medium.css">
+        <link rel="stylesheet" href="/css/small.css">
         <title>Document</title>
     </head>
 
     <body>
         <div id="grid">
-            <nav id="nav">
-                <div id="navSearch"></div>
-                <div id="navButtons"></div>
-                <div id="navRegister"></div>
-            </nav>
-            <input type="checkbox" name="leftCheckbox" id="leftCheckbox">
-            <aside id="left">
-                <button id="ask"></button>
+            <header>
+                <nav id="navigationBar">
+                    <div id="navSearch"></div>
+                    <div id="navButtons"></div>
+                    <div id="navRegister"></div>
+                </nav>
+            </header>
+            <input type="checkbox" name="leftPanelSlider" id="leftPanelSlider">
+            <aside id="leftPanel">
+                <button id="askQuestionButton">Lorem, ipsum dolor.</button>
             </aside>
+            <input type="checkbox" name="rightPanelSlider" id="rightPanelSlider">
+            <aside id="rightPanel"></aside>
             <main id="main">
-                <div id="category">
+                <div id="questionCategory">
                     <div>
                         <select>
                             <option>
-
+                                Lorem, ipsum dolor.
                             </option>
                         </select>
                     </div>
                 </div>
-                <div id="page">
+                <div id="questionPage">
                     <div>
                         <select>
                             <option>
-
+                                Lorem, ipsum.
                             </option>
                         </select>
                     </div>
                 </div>
-                <div id="thread">
+                <div id="questionThread">
                     <div class="topic">
                         <section class="question">
-                            <p class="tag"></p>
-                            <p class="tag"></p>
-                            <p class="tag"></p>
-                            <p class="tag"></p>
-                            <p class="tag"></p>
+                            <p class="tag">Lorem, ipsum.</p>
+                            <p class="tag">Lorem, ipsum dolor.</p>
+                            <p class="tag">Lorem.</p>
+                            <p class="tag">Lorem, ipsum.</p>
+                            <p class="tag">Lorem.</p>
                         </section>
-                        <aside class="floatRight">
-                            <div class="views"></div>
-                            <div class="answers"></div>
-                            <div class="votes"></div>
+                        <aside class="statusBars">
+                            <div class="viewsCount">5</div>
+                            <div class="answersCount">0</div>
+                            <div class="votesCount">109</div>
                         </aside>
                     </div>
                     <div class="topic">
@@ -63,10 +68,10 @@
                             <p class="tag"></p>
                             <p class="tag"></p>
                         </section>
-                        <aside class="floatRight">
-                            <div class="views"></div>
-                            <div class="answers"></div>
-                            <div class="votes"></div>
+                        <aside class="statusBars">
+                            <div class="viewsCount"></div>
+                            <div class="answersCount"></div>
+                            <div class="votesCount"></div>
                         </aside>
                     </div>
                     <div class="topic">
@@ -74,10 +79,10 @@
                             <p class="tag"></p>
                             <p class="tag"></p>
                         </section>
-                        <aside class="floatRight">
-                            <div class="views"></div>
-                            <div class="answers"></div>
-                            <div class="votes"></div>
+                        <aside class="statusBars">
+                            <div class="viewsCount"></div>
+                            <div class="answersCount"></div>
+                            <div class="votesCount"></div>
                         </aside>
                     </div>
                     <div class="topic">
@@ -88,16 +93,14 @@
                             <p class="tag"></p>
                             <p class="tag"></p>
                         </section>
-                        <aside class="floatRight">
-                            <div class="views"></div>
-                            <div class="answers"></div>
-                            <iv class="votes"></iv>
+                        <aside class="statusBars">
+                            <div class="viewsCount"></div>
+                            <div class="answersCount"></div>
+                            <iv class="votesCount"></iv>
                         </aside>
                     </div>
                 </div>
             </main>
-            <input type="checkbox" name="rightCheckbox" id="rightCheckbox">
-            <aside id="right"></aside>
         </div>
     </body>
 

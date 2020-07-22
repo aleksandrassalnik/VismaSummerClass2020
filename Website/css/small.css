@@ -1,0 +1,19 @@
+@media only screen and (max-width: 400px) {
+  #leftPanelSlider:checked,
+  #rightPanelSlider:checked {
+    margin-left: 80%;
+  }
+
+  /* Left panel css */
+
+  #leftPanel,
+  #rightPanel {
+    width: 80%;
+  }
+
+  .statusBars {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
