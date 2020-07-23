@@ -15,27 +15,116 @@
         <div id="grid">
             <header>
                 <nav id="navigationBar">
-                    <div id="navSearch"></div>
-                    <div id="navButtons"></div>
-                    <div id="navRegister"></div>
+                    <div id="navSearch">
+                        <h1 id="logo">Banner Logo</h1>
+                        <div id="searchBoxAlign">
+                            <input type="text" id="searchBox" placeholder="Enter keywords">
+                            <button id="searchSubmit">
+                                <i class="searchIcon menuIcons"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="navButtons">
+                        <div class="navButton">Home</div>
+                        <div class="navButton">About is</div>
+                        <div class="navButton">Blog</div>
+                        <div class="navButton">Term</div>
+                        <div class="navButton">Contact</div>
+                    </div>
+                    <div id="navRegister">
+                        <p class="clickableText">Login or Register</p>
+                    </div>
                 </nav>
             </header>
+
+
             <input type="checkbox" name="leftPanelSlider" id="leftPanelSlider">
             <aside id="leftPanel">
-                <button id="askQuestionButton">Lorem, ipsum dolor.</button>
-                <!-- <button class="questionsButton"> -->
-                    <i class="questionsIcon"></i>
-                <!-- </button> -->
-                <i class="tagsIcon"></i>
-                <i class="badgesIcon"></i>
-                <i class="categoriesIcon"></i>
-                <i class="usersIcon"></i>
+                <div class="bottomBorder">
+                    <button id="askQuestionButton">
+                        Lorem, ipsum dolor.
+                    </button>
+                </div>
+                <div class="bottomBorder">
+                    <button class="leftPanelMenuButtons">
+                        <i class="questionsIcon menuIcons"></i>
+                        <label for="" class="leftPanelMenuLabel">Lorem, ipsum.</label>
+                    </button>
+                    <button class="leftPanelMenuButtons">
+                        <i class="tagsIcon menuIcons"></i>
+                        <label class="leftPanelMenuLabel">Lorem.</label>
+                    </button>
+
+                    <button class="leftPanelMenuButtons">
+                        <i class="badgesIcon menuIcons"></i>
+                        <label class="leftPanelMenuLabel">Lorem, ipsum.</label>
+                    </button>
+
+                    <button class="leftPanelMenuButtons">
+                        <i class="categoriesIcon menuIcons"></i>
+                        <label class="leftPanelMenuLabel">Lorem, ipsum.</label>
+                    </button>
+                    <button class="leftPanelMenuButtons">
+                        <i class="usersIcon menuIcons"></i>
+                        <label class="leftPanelMenuLabel">Lorem.</label>
+                    </button>
+                </div>
             </aside>
+
+
             <input type="checkbox" name="rightPanelSlider" id="rightPanelSlider">
-            <aside id="rightPanel"></aside>
-            <main id="main">
-                <div id="questionCategory">
+            <aside id="rightPanel">
+                <div class="rightPanelStatus">
+                    <div id="rightPanelQuestionStatusBackground"></div>
+                    <div class="spaceBetweenColumn">
+                        <h3 class="rightPanelStatusHeader">Questions</h3>
+                        <h1 class="largeText">13</h1>
+                    </div>
+                </div>
+                <div class="rightPanelStatus">
+                    <div id="rightPanelAnswersStatusBackground"></div>
+                    <div class="spaceBetweenColumn">
+                        <h3 class="rightPanelStatusHeader">Answers</h3>
+                        <h1 class="largeText">8</h1>
+                    </div>
+                </div>
+                <h3 class="alignTextCenter darkerBorderBottom">MOST USED TAGS</h3>
+                <div class="tagDisplayBlock">
                     <div>
+                        <p class="tag">Lorem, ipsum.</p>
+                    </div>
+                    <div>
+                        <p class="tag">Lorem, ipsum dolor.</p>
+                    </div>
+                    <div>
+                        <p class="tag">Lorem.</p>
+                    </div>
+                    <div>
+                        <p class="tag">Lorem, ipsum.</p>
+                    </div>
+                    <div>
+                        <p class="tag">Lorem.</p>
+                    </div>
+                    <div>
+                        <p class="clickableText">See more tags</p>
+                    </div>
+                </div>
+
+                <h3 class="alignTextCenter darkerBorderBottom">HOT QUESTIONS</h3>
+                <div id="hotQuestions">
+                    <p class="clickableText">Lorem ipsum dolor sit amet.</p>
+                    <p class="clickableText">Lorem, ipsum dolor.</p>
+                    <p class="clickableText">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    <p class="clickableText">Lorem ipsum dolor sit.</p>
+                    <p class="clickableText">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+            </aside>
+
+
+            <main id="main">
+                <div class="bottomBorder" id="questionCategory">
+                    <div>
+                        <h4 id="selectHeader">All Questions</h4>
                         <select>
                             <option>
                                 Lorem, ipsum dolor.
@@ -43,7 +132,7 @@
                         </select>
                     </div>
                 </div>
-                <div id="questionPage">
+                <div class="bottomBorder" id="questionPage">
                     <div>
                         <select>
                             <option>
@@ -53,27 +142,32 @@
                     </div>
                 </div>
                 <div id="questionThread">
-                    <div class="topic">
+                    <div class="bottomBorder topic">
                         <section class="question">
-                            <div>
-                                <h1 class="commentHeader">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
-                                <p class="comment">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique
-                                    qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus,
-                                    iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio.
-                                    Cumque officia iure assumenda praesentium optio accusamus autem magni cupiditate
-                                    sapiente rerum amet, dolores minus aliquam, omnis laborum tenetur. Alias at fugit
-                                    sequi aut explicabo ipsum ex saepe itaque reprehenderit nesciunt mollitia in, animi
-                                    ut qui esse quam beatae illo veniam? Corrupti, iure! Porro, doloremque hic impedit
-                                    accusantium quis omnis rem optio aperiam cumque dignissimos dicta tempore suscipit
-                                    expedita vel sed fugit saepe? Reiciendis, voluptas dolorem? Necessitatibus.
-                                </p>
-                                <p class="tag">Lorem, ipsum.</p>
-                                <p class="tag">Lorem, ipsum dolor.</p>
-                                <p class="tag">Lorem.</p>
-                                <p class="tag">Lorem, ipsum.</p>
-                                <p class="tag">Lorem.</p>
-                            </div>
+                            <h1 class="commentHeader">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+                            <p class="comment">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi
+                                similique
+                                qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste
+                                necessitatibus,
+                                iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in
+                                distinctio.
+                                Cumque officia iure assumenda praesentium optio accusamus autem magni cupiditate
+                                sapiente rerum amet, dolores minus aliquam, omnis laborum tenetur. Alias at
+                                fugit
+                                sequi aut explicabo ipsum ex saepe itaque reprehenderit nesciunt mollitia in,
+                                animi
+                                ut qui esse quam beatae illo veniam? Corrupti, iure! Porro, doloremque hic
+                                impedit
+                                accusantium quis omnis rem optio aperiam cumque dignissimos dicta tempore
+                                suscipit
+                                expedita vel sed fugit saepe? Reiciendis, voluptas dolorem? Necessitatibus.
+                            </p>
+                            <p class="tag">Lorem, ipsum.</p>
+                            <p class="tag">Lorem, ipsum dolor.</p>
+                            <p class="tag">Lorem.</p>
+                            <p class="tag">Lorem, ipsum.</p>
+                            <p class="tag">Lorem.</p>
                         </section>
                         <aside class="statusBars">
                             <div class="viewsCount">5</div>
@@ -81,43 +175,100 @@
                             <div class="votesCount">109</div>
                         </aside>
                     </div>
-                    <div class="topic">
+                    <div class="topic bottomBorder">
                         <section class="question">
-                            <p class="tag"></p>
-                            <p class="tag"></p>
-                            <p class="tag"></p>
-                            <p class="tag"></p>
-                            <p class="tag"></p>
+                            <h1 class="commentHeader">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+                            <p class="comment">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi
+                                similique
+                                qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste
+                                necessitatibus,
+                                iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in
+                                distinctio.
+                                Cumque officia iure assumenda praesentium optio accusamus autem magni cupiditate
+                                sapiente rerum amet, dolores minus aliquam, omnis laborum tenetur. Alias at
+                                fugit
+                                sequi aut explicabo ipsum ex saepe itaque reprehenderit nesciunt mollitia in,
+                                animi
+                                ut qui esse quam beatae illo veniam? Corrupti, iure! Porro, doloremque hic
+                                impedit
+                                accusantium quis omnis rem optio aperiam cumque dignissimos dicta tempore
+                                suscipit
+                                expedita vel sed fugit saepe? Reiciendis, voluptas dolorem? Necessitatibus.
+                            </p>
+                            <p class="tag">Lorem.</p>
+                            <p class="tag">Lorem, ipsum.</p>
+                            <p class="tag">Lorem ipsum dolor sit amet.</p>
+                            <p class="tag">Lorem, ipsum.</p>
+                            <p class="tag">Lorem.</p>
                         </section>
                         <aside class="statusBars">
-                            <div class="viewsCount"></div>
-                            <div class="answersCount"></div>
-                            <div class="votesCount"></div>
+                            <div class="viewsCount">8</div>
+                            <div class="answersCount">33</div>
+                            <div class="votesCount">0</div>
                         </aside>
                     </div>
-                    <div class="topic">
+                    <div class="topic bottomBorder">
                         <section class="question">
-                            <p class="tag"></p>
-                            <p class="tag"></p>
+                            <h1 class="commentHeader">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+                            <p class="comment">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi
+                                similique
+                                qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste
+                                necessitatibus,
+                                iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in
+                                distinctio.
+                                Cumque officia iure assumenda praesentium optio accusamus autem magni cupiditate
+                                sapiente rerum amet, dolores minus aliquam, omnis laborum tenetur. Alias at
+                                fugit
+                                sequi aut explicabo ipsum ex saepe itaque reprehenderit nesciunt mollitia in,
+                                animi
+                                ut qui esse quam beatae illo veniam? Corrupti, iure! Porro, doloremque hic
+                                impedit
+                                accusantium quis omnis rem optio aperiam cumque dignissimos dicta tempore
+                                suscipit
+                                expedita vel sed fugit saepe? Reiciendis, voluptas dolorem? Necessitatibus.
+                            </p>
+                            <p class="tag">Lorem.</p>
+                            <p class="tag">Lorem, ipsum.</p>
                         </section>
                         <aside class="statusBars">
-                            <div class="viewsCount"></div>
-                            <div class="answersCount"></div>
-                            <div class="votesCount"></div>
+                            <div class="viewsCount">0</div>
+                            <div class="answersCount">43</div>
+                            <div class="votesCount">87</div>
                         </aside>
                     </div>
-                    <div class="topic">
+                    <div class="topic bottomBorder">
                         <section class="question">
-                            <p class="tag"></p>
-                            <p class="tag"></p>
-                            <p class="tag"></p>
-                            <p class="tag"></p>
-                            <p class="tag"></p>
+                            <h1 class="commentHeader">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+                            <p class="comment">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi
+                                similique
+                                qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste
+                                necessitatibus,
+                                iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in
+                                distinctio.
+                                Cumque officia iure assumenda praesentium optio accusamus autem magni cupiditate
+                                sapiente rerum amet, dolores minus aliquam, omnis laborum tenetur. Alias at
+                                fugit
+                                sequi aut explicabo ipsum ex saepe itaque reprehenderit nesciunt mollitia in,
+                                animi
+                                ut qui esse quam beatae illo veniam? Corrupti, iure! Porro, doloremque hic
+                                impedit
+                                accusantium quis omnis rem optio aperiam cumque dignissimos dicta tempore
+                                suscipit
+                                expedita vel sed fugit saepe? Reiciendis, voluptas dolorem? Necessitatibus.
+                            </p>
+                            <p class="tag">Lorem, ipsum dolor.</p>
+                            <p class="tag">Lorem.</p>
+                            <p class="tag">Lorem, ipsum.</p>
+                            <p class="tag">Lorem.</p>
+                            <p class="tag">Lorem.</p>
                         </section>
                         <aside class="statusBars">
-                            <div class="viewsCount"></div>
-                            <div class="answersCount"></div>
-                            <iv class="votesCount"></iv>
+                            <div class="viewsCount">1</div>
+                            <div class="answersCount">0</div>
+                            <iv class="votesCount">-3</iv>
                         </aside>
                     </div>
                 </div>

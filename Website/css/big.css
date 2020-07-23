@@ -1,9 +1,8 @@
 @media only screen and (min-width: 1000px) {
   #grid {
     display: grid;
-    min-height: 100vh;
+    min-height: 100%;
     grid-template-columns: 16% 68% 16%;
-    grid-template-rows: 6% 93%;
     grid-template-areas: "nav nav nav" "left main right";
   }
 
@@ -16,7 +15,7 @@
   }
 
   #navSearch {
-    padding: 29px 0;
+    display: flex;
     width: 59%;
   }
 

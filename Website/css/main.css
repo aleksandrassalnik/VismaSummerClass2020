@@ -4,8 +4,14 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+#logo {
+  color: white;
+  margin: auto 0px auto 25px;
+}
+
 #navigationBar,
 header {
+  z-index: 1;
   position: sticky;
   top: 0;
   margin: 0;
@@ -14,17 +20,53 @@ header {
   background-color: rgb(35, 35, 59);
 }
 
+#navSearch {
+  display: flex;
+}
+
+#searchBox {
+  width: 250px;
+  height: 1.2rem;
+  padding: 0 1em;
+  border: 0;
+  outline: 0;
+  border-radius: 13px;
+}
+
+#searchBoxAlign {
+  display: flex;
+  margin: auto;
+}
+
 #navButtons {
+  display: flex;
+  justify-content: space-evenly;
   background-color: rgb(15, 15, 39);
 }
 
+.navButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: lightgray;
+  font-size: small;
+  cursor: pointer;
+}
+
+.navButton:hover {
+  color: gray;
+}
+
 #navRegister {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 16%;
 }
 
 #leftPanel {
   border-right: 2px solid rgb(238, 237, 237);
-  /* display: flex; */
   height: 100%;
 }
 
@@ -32,7 +74,7 @@ header {
   cursor: pointer;
   font-size: large;
   color: white;
-  display:block;
+  display: block;
   width: 90%;
   height: 50px;
   background-color: rgb(112, 112, 230);
@@ -62,19 +104,22 @@ header {
   width: 100%;
 }
 
-#questionCategory {
+#questionCategory div {
+  display:flex;
+  justify-content: space-between;
   height: 4rem;
 }
 
-#questionCategory,
 #questionPage {
-  border-bottom: 2px solid rgb(238, 237, 237);
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-#questionCategory div,
+#questionCategory {
+  width:100%;
+}
+
 #questionPage div {
   display: flex;
   justify-content: flex-end;
@@ -88,9 +133,15 @@ select {
   background-color: rgb(252, 250, 250);
   border: 1px solid rgb(238, 237, 237);
   border-radius: 3px;
+  max-height:1.5em;
+  margin:auto;
   display: inline;
   font-size: medium;
   margin-right: 15px;
+}
+
+#selectHeader {
+  margin:auto 0 auto 2em;
 }
 
 select:focus {
@@ -101,7 +152,6 @@ select:focus {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid rgb(238, 237, 237);
 }
 
 /* Colors every secont element starting from the first one */
@@ -185,7 +235,8 @@ select:focus {
   );
 }
 
-.comment, .commentHeader {
+.comment,
+.commentHeader {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -193,36 +244,145 @@ select:focus {
   -webkit-box-orient: vertical;
 }
 
-.questionsIcon, .tagsIcon, .badgesIcon, .categoriesIcon, .usersIcon {
-  background-image: url('http://www.trenatics.com/public/images/iconfile/sprites/css-sprite/sprite-action-grey600.png');
+.questionsIcon,
+.tagsIcon,
+.badgesIcon,
+.categoriesIcon,
+.usersIcon,
+.searchIcon {
+  background-image: url("../img/icon_sprites.png");
   background-repeat: no-repeat;
 }
 
 .questionsIcon {
-  background-position: -15.1em -6.6em;
+  background-position: -242px -106px;
 }
 
-.tagsIcon{
-  background-position: -17.25em -10.9em;
+.tagsIcon {
+  background-position: -276px -174px;
 }
 
 .badgesIcon {
-  background-position: -0.25em -2.35em;
+  background-position: -378px -38px;
 }
 
 .categoriesIcon {
-  background-position: -25.8em -17.3em;
+  background-position: -413px -276px;
 }
 
 .usersIcon {
-  background-position: -23.6em -8.7em;
+  background-position: -378px -138px;
 }
 
-i{
-  padding:4px 13px;
+.searchIcon {
+  background-position: -242px -310px;
+  zoom: 0.75;
 }
 
-.questionsButton {
-  width:100px;
-  height: 50px;
+#searchSubmit {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  margin-top: 2px;
+  margin-left: -30px;
+  padding: 4px 1px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+i {
+  padding: 13px 13px;
+}
+
+.leftPanelMenuButtons {
+  outline: 0;
+  border: 0;
+  width: 90%;
+  margin: 1em 0;
+  padding: 0 1em;
+  display: flex;
+  cursor: pointer;
+  justify-items: start;
+  background: transparent;
+}
+
+.leftPanelMenuButtons:hover .leftPanelMenuLabel,
+.leftPanelMenuButtons:hover .menuIcons {
+  transform: scale(1.1);
+}
+
+.leftPanelMenuLabel {
+  margin: auto 0 auto 1em;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bottomBorder {
+  border-bottom: 2px solid rgb(238, 237, 237);
+}
+
+.largeText {
+  font-size: xxx-large;
+}
+
+.rightPanelStatus {
+  padding: 1rem;
+  cursor: default;
+  display: flex;
+}
+
+#rightPanelQuestionStatusBackground,
+#rightPanelAnswersStatusBackground {
+  margin-right: 0.5em;
+  display: inline;
+  padding: 45px 3px;
+}
+
+#rightPanelQuestionStatusBackground {
+  background-color: rgb(46, 163, 202);
+}
+
+#rightPanelAnswersStatusBackground {
+  background-color: rgb(211, 161, 54);
+}
+
+.rightPanelStatusHeader,
+.largeText {
+  margin: 0;
+}
+
+.spaceBetweenColumn {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.alignTextCenter {
+  text-align: center;
+}
+
+.tagDisplayBlock div {
+  margin: 0 1.5em;
+  display: block;
+}
+
+.darkerBorderBottom {
+  border-bottom: 2px solid rgb(228, 226, 226);
+  margin: 1.5em 1em;
+}
+
+.clickableText {
+  cursor: pointer;
+  font-size: smaller;
+  color: rgb(51, 190, 221);
+}
+
+.clickableText:hover {
+  color: rgb(45, 164, 190);
+}
+
+#hotQuestions {
+  padding: 0 1.5em 1rem 1.5rem;
 }

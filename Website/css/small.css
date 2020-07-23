@@ -11,6 +11,10 @@
     width: 80%;
   }
 
+  #searchBox, #searchSubmit {
+    display:none ;
+  }
+
   .statusBars {
     display: flex;
     flex-direction: column;
@@ -21,5 +25,4 @@
   .viewsCount, .answersCount, .votesCount{
     margin-top: 1.5rem;
   } 
-
 }

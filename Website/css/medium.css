@@ -1,9 +1,8 @@
 @media only screen and (max-width: 1000px) {
   /* Navbar css */
   #navSearch {
-    margin: auto;
+    width: 100%;
   }
-
   #navButtons {
     width: 5rem;
     padding: 29px 0;
@@ -20,6 +19,7 @@
   /* Checkbox sliders appearance */
   #leftPanelSlider,
   #rightPanelSlider {
+    z-index: 1;
     -webkit-appearance: none;
     position: fixed;
     border-top-right-radius: 2em;
@@ -48,6 +48,11 @@
     -o-transform: translateX(0);
   }
 
+  #leftPanelSlider:hover,
+  #rightPanelSlider:hover {
+    cursor: pointer;
+  }
+
   #leftPanelSlider:checked,
   #rightPanelSlider:checked {
     margin-left: 50%;
@@ -60,7 +65,6 @@
 
   #rightPanel #ask {
     display: flex;
-    z-index: 1;
   }
 
   /* Adds animation on slider and panel */
@@ -77,6 +81,8 @@
 
   #leftPanel,
   #rightPanel {
+    overflow: visible;
+    z-index: 2;
     position: fixed;
     top: 58px;
     transform: translateX(-100%);
@@ -89,7 +95,6 @@
 
   #leftPanel {
     background-color: white;
-    z-index: 1;
     width: 50%;
     scale: 0;
   }
@@ -104,5 +109,14 @@
 
   .question {
     margin-bottom: 1em;
+  }
+
+  #navButtons .navButton {
+    display: none;
+  }
+
+  #searchBox,
+  #searchSubmit {
+    display: none;
   }
 }
