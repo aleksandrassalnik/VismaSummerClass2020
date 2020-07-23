@@ -103,11 +103,6 @@
   }
 
   .question {
-    margin: 105px auto 10px auto;
-  }
-
-  /* Shaped tag elements, margins push them down instead of text. Width stands instead of text that would be inside*/
-  .tag {
-    margin: 0 15px 0 0;
+    margin-bottom: 1em;
   }
 }

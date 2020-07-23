@@ -42,18 +42,10 @@
     grid-area: main;
   }
 
-  .question {
-    margin: 0 auto;
-  }
-
-  /* Shaped tag elements, margins push them down instead of text. Width stands instead of text that would be inside*/
-  .tag {
-    margin: 110px 15px 0 0;
-  }
-
   /* Hides checkboxed that controls side panels */
   #leftPanelSlider,
   #rightPanelSlider {
     display: none;
   }
+  
 }
