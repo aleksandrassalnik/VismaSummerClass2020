@@ -1,0 +1,28 @@
+What is CSS box model?
+Css box is html element and all his covered area (border, margin, padding and it's elements content)
+
+What is the difference between an inline element and a block element?
+Inline elements are displayed next to eachother when block elements are displayed each in his own row
+
+What are different ways to center a nested <div> horizontally?
+with flexbox (by writing in parend display:flex; justify-content:center), grid (by defining grid columns auto actual width auto) and margins/paddings (margin:0 auto; or padding:0 auto;)
+
+What are different ways to center a nested <div> vertically?
+with flexbox (by writing in parend display:flex; flex-direction:column; justify-content:center),
+grid (by defining grid rows auto actual/needed width auto) and margins/paddings (margin:auto 0; or padding:auto 0;)
+
+What are CSS pseudo elements?
+It's css element used to style specified parts of an element (i.e. ::nth-child(), ::before, ::after, ::content etc.)
+
+What are different ways to use CSS transitions?
+To smoothly animate different parts of css (i.e. we can animate transformation/color changes/width etc.)
+We can define transition delays (when the animation should start)
+Duration (how long the animation will work)
+We can define transition "smoothness" with properties such as ease/ease-in/ease-out etc.
+
+What does each variable in gradient definition mean?
+Let's take background: linear-gradient(90deg, rgba(252,250,250,1) 0%, rgba(238,237,237,1) 100%); for example.
+radial-gradient - defines what gradient we are using (in this example we are using linear gradient, we can also use radial gradient)
+deg - defines which direction gradient will go
+rgba/hex color/color name - defines the color
+percentage - defines when gradient will start appearing on that color
