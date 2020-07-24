@@ -1,4 +1,7 @@
 @media only screen and (max-width: 400px) {
+  #grid {
+    width:100nw;
+  }
   #leftPanelSlider:checked,
   #rightPanelSlider:checked {
     margin-left: 80%;
@@ -13,6 +16,10 @@
 
   #searchBox, #searchSubmit {
     display:none ;
+  }
+
+  #navRegister {
+    width:30%;
   }
 
   .statusBars {

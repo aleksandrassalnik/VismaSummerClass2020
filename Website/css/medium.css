@@ -4,9 +4,35 @@
     width: 100%;
   }
   #navButtons {
-    width: 5rem;
-    padding: 29px 0;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    width:5rem;
+    padding: 0;
     margin: 0;
+  }
+
+  #navButtons:hover .navButton {
+    display:block;
+  }
+
+  #navbarDropdownContent {
+    position:absolute;
+    top:42px;
+    background-color: rgb(15, 15, 39);
+  }
+
+  #logo {
+    padding: 0 0.5em 0 0;
+  }
+
+  .navButton{
+    font-size: 0.9em;
+    padding: 0.5em; 
+  }
+
+  #navRegister {
+    padding: 0 0.5em;
   }
 
   /* Checkbox sliders */
@@ -83,12 +109,22 @@
   #rightPanel {
     overflow: visible;
     z-index: 2;
+    top:0;
+    bottom:0;
     position: fixed;
-    top: 58px;
+    top: 42px;
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
     -o-transform: translateX(-100%);
+  }
+
+  #leftPanel:hover, #rightPanel:hover {
+    overflow-y:scroll;
+  }
+
+  #leftPanel::-webkit-scrollbar, #rightPanel::-webkit-scrollbar {
+    width:1px;
   }
 
   /* Left panel css */

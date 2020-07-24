@@ -21,6 +21,13 @@
 
   #navButtons {
     width: 25%;
+    padding: 0 1em;
+  }
+
+  #navbarDropdownContent {
+    width:100%;
+    display:flex;
+    justify-content: space-between;
   }
 
   /* Left panel css */
@@ -46,5 +53,7 @@
   #rightPanelSlider {
     display: none;
   }
-  
+  .dropdownIcon {
+    display:none;
+  }
 }

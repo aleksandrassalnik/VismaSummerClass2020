@@ -4,9 +4,26 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Navbar css */
+
 #logo {
   color: white;
   margin: auto 0px auto 25px;
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#searchSubmit {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  margin-top: 2px;
+  margin-left: -30px;
+  padding: 4px 1px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 #navigationBar,
@@ -65,6 +82,33 @@ header {
   width: 16%;
 }
 
+/*Left panel css*/
+
+.leftPanelMenuButtons {
+  outline: 0;
+  border: 0;
+  width: 90%;
+  margin: 1em 0;
+  padding: 0 1em;
+  display: flex;
+  cursor: pointer;
+  justify-items: start;
+  background: transparent;
+}
+
+.leftPanelMenuButtons:hover .leftPanelMenuLabel,
+.leftPanelMenuButtons:hover .menuIcons {
+  transform: scale(1.1);
+}
+
+.leftPanelMenuLabel {
+  margin: auto 0 auto 1em;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 #leftPanel {
   border-right: 2px solid rgb(238, 237, 237);
   height: 100%;
@@ -91,10 +135,44 @@ header {
   background: rgb(85, 85, 173);
 }
 
+/*Right panel css*/
+
 #rightPanel {
   background-color: rgb(238, 237, 237);
   height: 100%;
 }
+
+#rightPanelQuestionStatusBackground,
+#rightPanelAnswersStatusBackground {
+  margin-right: 0.5em;
+  display: inline;
+  padding: 45px 3px;
+}
+
+#rightPanelQuestionStatusBackground {
+  background-color: rgb(46, 163, 202);
+}
+
+#rightPanelAnswersStatusBackground {
+  background-color: rgb(211, 161, 54);
+}
+
+.rightPanelStatusHeader,
+.largeText {
+  margin: 0;
+}
+
+.rightPanelStatus {
+  padding: 1rem;
+  cursor: default;
+  display: flex;
+}
+
+#hotQuestions {
+  padding: 0 1.5em 1rem 1.5rem;
+}
+
+/*Main panel css*/
 
 #main {
   height: 100%;
@@ -199,7 +277,7 @@ select:focus {
 }
 
 .tag:hover {
-  cursor: default;
+  cursor: pointer;
   background-color: rgb(236, 235, 235);
 }
 
@@ -212,7 +290,7 @@ select:focus {
 .viewsCount,
 .answersCount,
 .votesCount {
-  cursor: default;
+  cursor: pointer;
   transform: rotate(2deg);
   display: flex;
   justify-content: center;
@@ -244,12 +322,14 @@ select:focus {
   -webkit-box-orient: vertical;
 }
 
+/*Icons*/
 .questionsIcon,
 .tagsIcon,
 .badgesIcon,
 .categoriesIcon,
 .usersIcon,
-.searchIcon {
+.searchIcon, 
+.dropdownIcon {
   background-image: url("../img/icon_sprites.png");
   background-repeat: no-repeat;
 }
@@ -279,45 +359,16 @@ select:focus {
   zoom: 0.75;
 }
 
-#searchSubmit {
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  margin-top: 2px;
-  margin-left: -30px;
-  padding: 4px 1px;
-  overflow: hidden;
-  cursor: pointer;
+.dropdownIcon {
+  background-position: -241px 3px;
+  margin:-0.1em auto 0.5em auto;
 }
 
 i {
   padding: 13px 13px;
 }
 
-.leftPanelMenuButtons {
-  outline: 0;
-  border: 0;
-  width: 90%;
-  margin: 1em 0;
-  padding: 0 1em;
-  display: flex;
-  cursor: pointer;
-  justify-items: start;
-  background: transparent;
-}
-
-.leftPanelMenuButtons:hover .leftPanelMenuLabel,
-.leftPanelMenuButtons:hover .menuIcons {
-  transform: scale(1.1);
-}
-
-.leftPanelMenuLabel {
-  margin: auto 0 auto 1em;
-  pointer-events: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+/*Global css*/
 
 .bottomBorder {
   border-bottom: 2px solid rgb(238, 237, 237);
@@ -325,32 +376,6 @@ i {
 
 .largeText {
   font-size: xxx-large;
-}
-
-.rightPanelStatus {
-  padding: 1rem;
-  cursor: default;
-  display: flex;
-}
-
-#rightPanelQuestionStatusBackground,
-#rightPanelAnswersStatusBackground {
-  margin-right: 0.5em;
-  display: inline;
-  padding: 45px 3px;
-}
-
-#rightPanelQuestionStatusBackground {
-  background-color: rgb(46, 163, 202);
-}
-
-#rightPanelAnswersStatusBackground {
-  background-color: rgb(211, 161, 54);
-}
-
-.rightPanelStatusHeader,
-.largeText {
-  margin: 0;
 }
 
 .spaceBetweenColumn {
@@ -383,6 +408,9 @@ i {
   color: rgb(45, 164, 190);
 }
 
-#hotQuestions {
-  padding: 0 1.5em 1rem 1.5rem;
+.truncateText {
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
