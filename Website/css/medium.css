@@ -119,12 +119,8 @@
     -o-transform: translateX(-100%);
   }
 
-  #leftPanel:hover, #rightPanel:hover {
-    overflow-y:scroll;
-  }
-
-  #leftPanel::-webkit-scrollbar, #rightPanel::-webkit-scrollbar {
-    width:1px;
+  #leftPanel, #rightPanel {
+    overflow-y:auto;
   }
 
   /* Left panel css */
@@ -142,6 +138,45 @@
     z-index: 1;
     width: 50%;
   }
+
+  /* Makes checkbox as arrow */
+#tagToggler::before {
+  border: 0.25em solid black;
+  content: "";
+  margin:0.25em 50% 0 50%;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 0.25em;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+#tagToggler:checked + .tagDisplayBlock {
+  max-height:50vh;
+}
+
+#tagToggler:checked::before {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+/* hides checkbox */
+#tagToggler {
+  cursor:pointer;
+  margin:auto;
+  margin-top:-1.5em;
+  display:block;
+  height:1.5em;
+  outline: 0;
+  -webkit-appearance: none;
+  width: 70%;
+}
+
+.tagDisplayBlock {  
+  max-height:0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
 
   .question {
     margin-bottom: 1em;
