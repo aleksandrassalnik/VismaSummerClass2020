@@ -12,6 +12,10 @@
     margin: 0;
   }
 
+  #navButtons:hover .dropdownIcon{
+    background-position:-118px -5px;
+  }
+
   #navButtons:hover .navButton {
     display:block;
   }

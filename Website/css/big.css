@@ -33,6 +33,9 @@
   /* Left panel css */
 
   #leftPanel {
+    position:fixed;
+    top:41px;
+    width:16%;
     grid-area: left;
   }
 
