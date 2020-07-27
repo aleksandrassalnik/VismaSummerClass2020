@@ -1,0 +1,33 @@
+What are some of the common list types that can be used when designing a page?
+There are 2 list types - ordered and unordered. 
+Ordered list comes with numbers and can be changed to roman numbers or others
+Unordered list comes with circles that can be changed to squares and other shapes
+
+What is a hyperlink? 
+It's a reference to data/content that user can follow by clicking a hyperlink
+
+How are active links different from normal links? 
+Property active is displayed when link/button/other html elements are clicked,
+while normal/visited link is displayed the same way as usual without clicking
+
+How do you select active link with CSS selector?
+link:active {
+your css;
+}
+
+What are CSS sprites? How can you manipulate them? 
+Sprite is a collection of images combined to one.
+You can manipulate sprites by defining background position, height and width.
+
+What is the difference between adaptive and responsive design? 
+In adaptive design there usually is several fixed layouts that are selected based on device screen size,
+while in responsive design there's one layout where all content is being moved dynamically.
+
+What does 'Mobile first' mean? 
+Mobile first means that we start developing website from smaller/limited width devices such as phones
+and then gradually expand its features to create layouts for bigger devices such as tablets or desktops.
+
+What is media queries? What are the common media queries breakpoint values? 
+Media query is a rule that let's you design layout
+based on defined elements (usualy it's used with only screen rule to define device width)
+Commonly used breakpoint values - 320-480 (mobile), 481-768 (tablets), 769-1024 (laptops), 1025-1200 (desktops)
