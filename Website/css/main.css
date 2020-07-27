@@ -34,7 +34,7 @@ a {
 header {
   z-index: 1;
   position: sticky;
-  height:41px;
+  height: 41px;
   top: 0;
   margin: 0;
   width: 100%;
@@ -84,7 +84,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin:0 3px;
+  margin: 0 3px;
   width: 16%;
 }
 
@@ -101,7 +101,7 @@ header {
 
 .leftPanelSocialButtons {
   width: 33%;
-  padding:0;
+  padding: 0;
   justify-content: center;
 }
 
@@ -112,15 +112,15 @@ header {
 }
 
 .leftPanelSocialButtons div {
-  padding:0;
-  transform: scale(0.8)
+  padding: 0;
+  transform: scale(0.8);
 }
 
 .leftPanelMenuButtons,
 .leftPanelSocialButtons {
   outline: 0;
   border: 0;
-  display:flex;
+  display: flex;
   margin: 1em 0;
   cursor: pointer;
   background: transparent;
@@ -196,7 +196,7 @@ header {
   padding: 1rem;
   cursor: default;
   display: flex;
-  margin-left:1.5em;
+  margin-left: 1.5em;
 }
 
 #hotQuestions {
@@ -414,23 +414,26 @@ select:focus {
 .facebook {
   background-position: -349px -142px;
   width: 36px;
-	height: 35px;
+  height: 35px;
 }
 
 .twitter {
   background-position: -864px -790px;
   width: 38px;
-	height: 36px;
+  height: 36px;
 }
 
 .google {
   background-position: -218px -793px;
   width: 41px;
-	height: 33px;
+  height: 33px;
 }
 
 .facebook:hover {
   background-position: -350px -792px;
+  overflow: hidden;
+  width: 31px;
+  height: 32px;
 }
 
 .twitter:hover {
