@@ -4,6 +4,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Navbar css */
 
 #logo {
@@ -30,6 +34,7 @@ body {
 header {
   z-index: 1;
   position: sticky;
+  height:41px;
   top: 0;
   margin: 0;
   width: 100%;
@@ -79,6 +84,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin:0 3px;
   width: 16%;
 }
 
@@ -190,6 +196,7 @@ header {
   padding: 1rem;
   cursor: default;
   display: flex;
+  margin-left:1.5em;
 }
 
 #hotQuestions {

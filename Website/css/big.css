@@ -1,7 +1,8 @@
 @media only screen and (min-width: 1000px) {
   #grid {
     display: grid;
-    min-height: 100%;
+    min-height: 100vh;
+    grid-template-rows: 41px auto;
     grid-template-columns: 16% 68% 16%;
     grid-template-areas: "nav nav nav" "left main right";
   }
