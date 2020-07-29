@@ -8,4 +8,4 @@ const SevenAte9 = (string) => {
     return newString;
 }
 
-console.log(SevenAte9('79797'))
+console.log(SevenAte9('79797'), SevenAte9('79712312'));
