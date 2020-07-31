@@ -18,6 +18,6 @@ function ES5Moto(name) {
     return 'There\'s no such house';
 }
 
-const ES6Moto = (name) => houses.find(houses => houses.name === name ? houses : null).motto
+const ES6Moto = (name) => houses.find(houses => houses.name === name ? houses : null).motto;
 
 console.log(ES5Moto('Bolton'), ES6Moto('Greyjoy'));
