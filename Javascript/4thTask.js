@@ -9,12 +9,6 @@ function ES5Sum(listOfNumbers) {
     return sum;
 }
 
-const ES6Sum = (listOfNumbers) => {
-    let sum = 0;
-    listOfNumbers.map(number => {
-        sum = sum + number;
-    })
-    return sum;
-}
+const ES6Sum = (listOfNumbers) => listOfNumbers.reduce((total, value) => total + value);
 
 console.log(ES6Sum(listOfNumbers), ES5Sum(listOfNumbers));
