@@ -1,0 +1,109 @@
+1. Why JavaScript is used on websites? Is it used only on the front-end? 
+JavaScript is used on websites, because it's client-sided. No, javascript can be used to write backend with Node.js.
+
+2. What do JavaScript functions prompt, alert and confirm do? 
+Prompt is a input popup which has ok and cancel buttons, alert is a popup with text which has only ok button, confirm is a popup with ok and cancel buttons.
+
+3. Why is it preferred to include javascript and css code as separate files? 
+It increases readability and let's you re-use same javascript/css files in separate html files.
+
+4. What data types are in javascript? 
+number, string, object, boolean, bigint, undefined, symbol
+
+
+5. What’s the difference between == and ===? 
+== compares only values while === looks at data-type and values.
+
+6. What is the difference between undefined and null in JavaScript? 
+null is assigned value, undefined usually means that variable has been declared but not defined.
+
+7. How to get the type of variable? 
+by using typeof operator 
+
+8. How to convert number to string? string to number? 
+To convert number to string we need to use toString(). 
+To convert string to number we need to use parseInt().
+
+9. What does "short-circuiting" mean in javascript context? 
+It means that when we use short circuit evaluations i.e. && (and) or || (or) it evaluates the expression till the first needed value (false for && and true for ||)
+
+10.What are "truthy" and "falsy" values?  
+Those are values that always return true or false.
+falsy values - false 0 '' "" null undefined NaN
+everything else is considered truthy
+
+11.How scope works in JavaScript? 
+In javascript there are three types of scope - global, local and lexical. 
+Global scope lets everything to use it's variables.
+In local scope you can use global variables and ones defined in itself, but not lexical.
+lexical scope is a scope in a local scope. Here you can use local scopes variables and ones defined in itself.
+
+12.Explain variable “hoisting”. 
+Variable hoisting is the use of variable before it was defined i.e.:
+console.log(myVariable);
+
+var myVariable = 'Hello';
+
+
+13.What is "use strict"? What are the advantages and disadvantages to using it? 
+use strict is a directive that doesn't let you to use undeclared variables.
+advantages - it helps engines to optimize the code and run it faster.
+Doesn't allow dublicate keys in objects.
+Freezes the arguments of the function.
+Eliminates silent errors and throws them as errors.
+disadvantages - if you are in normal mode and using use-strict mode library, 
+you can use some methods that are not allowed in strict mode, which in result will fail.
+use-strict doesn't allow to use some of the javacript functionality.
+
+14.What is the difference between function declaration and function expression? 
+function declaration is 'stored for later' and will execute when called.
+function expression is a function stored in a variable. 
+declared function needs to have a name while expressed function will be called by name of the variable.
+
+15.What does it mean "javascript functions are first-class"? 
+It means what we can use functions as variables. I.e. we can pass function as an argument or store it in a variable.
+
+16.How to declare a named function? An anonymous function? 
+named function - function funcName() {}
+anonymous function - function () {} or () => {}
+
+17.What is a prototype? 
+It's an object that is associated with every functions and objects by default. We can access and modify prototype properties.
+
+18.What is a "closure"? How to create it? 
+A closure is the combination of a function and the lexical environment within which that function was declared.
+To create we need to create nested function and return it in it's parent function. I.e.
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+19.What are "higher order functions"? 
+Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.
+
+20.What is event bubbling and capturing? 
+Event bubbling is an event that runs events on clicked element, then on its ancestors.
+Event capturing is an event that runs events from window element till clicked element (reverse of bubbling).
+
+21.What is unit testing? How can it be beneficial? 
+Unit testing is a testing method where individual units/ components of a software are tested. It helps to change/maintain the code.
+
+22.Describe Test-driven development. 
+TDD development is when test cases are created before the code is written.
+
+23.Describe Behaviour-driven development. 
+BDD development is development approach that has evolved from TDD. It differs by being written in shared language. In BDD tests are more user-focused and based on system's behavior
+
+24.What is NodeJS? 
+NodeJS is a JavaScript runtime environment(Framework) that executes JavaScript code outside a web browser usually used to develop server-side applications.
+
+25.What are most popular uses of Node? 
+Creating server-side applications or API's.
+
+26.What is the difference between normal function and arrow function? 
+normal function 'this' value is dynamice while in arrow function 'this' value is lexical (doesn't define its own execution context)
+normal functions can be used as constructors while arrow functions can't
+arguments are passed the same way as 'this' 
+when arrow function contains only one expression you don't need to write return while in normal functions it will end in returning undefined
+
