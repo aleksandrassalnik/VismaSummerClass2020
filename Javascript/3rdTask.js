@@ -6,6 +6,16 @@ function ES5Range(x, y) {
     return array;
 }
 
+<<<<<<< HEAD
 const ES6Range = (x, y) => Array.from({ length: y - x }, (v, i) => x + i);
+=======
+const ES6Range = (x, y) => {
+    let array = [];
+    for (x; x < y; x++) { 
+        array = [...array, x];
+    }
+    return array;
+}
+>>>>>>> goal-3
 
 console.log(ES5Range(1, 5), ES6Range(1, 5));

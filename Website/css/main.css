@@ -4,6 +4,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Navbar css */
 
 #logo {
@@ -30,6 +34,7 @@ body {
 header {
   z-index: 1;
   position: sticky;
+  height: 41px;
   top: 0;
   margin: 0;
   width: 100%;
@@ -79,20 +84,45 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 3px;
   width: 16%;
 }
 
 /*Left panel css*/
+#socialButtons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+#socialButtons .leftPanelMenuButtons {
+  display: inline;
+}
+
+.leftPanelSocialButtons {
+  width: 33%;
+  padding: 0;
+  justify-content: center;
+}
 
 .leftPanelMenuButtons {
+  width: 90%;
+  padding: 0 1em;
+  justify-items: start;
+}
+
+.leftPanelSocialButtons div {
+  padding: 0;
+  transform: scale(0.8);
+}
+
+.leftPanelMenuButtons,
+.leftPanelSocialButtons {
   outline: 0;
   border: 0;
-  width: 90%;
-  margin: 1em 0;
-  padding: 0 1em;
   display: flex;
+  margin: 1em 0;
   cursor: pointer;
-  justify-items: start;
   background: transparent;
 }
 
@@ -166,6 +196,7 @@ header {
   padding: 1rem;
   cursor: default;
   display: flex;
+  margin-left: 1.5em;
 }
 
 #hotQuestions {
@@ -173,7 +204,7 @@ header {
 }
 
 #tagToggler {
-  display:none;
+  display: none;
 }
 
 /*Main panel css*/
@@ -332,8 +363,7 @@ select:focus {
 .badgesIcon,
 .categoriesIcon,
 .usersIcon,
-.searchIcon,
-.dropdownIcon {
+.searchIcon {
   background-image: url("../img/icon_sprites.png");
   background-repeat: no-repeat;
 }
@@ -364,8 +394,54 @@ select:focus {
 }
 
 .dropdownIcon {
-  background-position: -241px 3px;
-  margin: -0.1em auto 0.5em auto;
+  background-image: url("../img/24_list_view.png");
+  background-repeat: no-repeat;
+  background-position: -31px -5px;
+  margin: 0.75em -1em 0 1em;
+  width: 20px;
+  height: 26px;
+  padding: 0;
+}
+
+.facebook,
+.twitter,
+.google {
+  background-image: url("../img/socialMediaSprites.png");
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+.facebook {
+  background-position: -349px -142px;
+  width: 36px;
+  height: 35px;
+}
+
+.twitter {
+  background-position: -864px -790px;
+  width: 38px;
+  height: 36px;
+}
+
+.google {
+  background-position: -218px -793px;
+  width: 41px;
+  height: 33px;
+}
+
+.facebook:hover {
+  background-position: -350px -792px;
+  overflow: hidden;
+  width: 31px;
+  height: 32px;
+}
+
+.twitter:hover {
+  background-position: -864px -140px;
+}
+
+.google:hover {
+  background-position: -218px -145px;
 }
 
 i {
