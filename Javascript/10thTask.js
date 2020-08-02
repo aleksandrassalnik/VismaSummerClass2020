@@ -1,17 +1,23 @@
-let totalCount = 0;
-
-let myFunction = () => {
-    console.log('You called me')
+let myFunction = (name = '') => {
+    console.log(`Hello ${name}`)
 }
 
-const spy = func => {
-    func();
-    return () => { this.report = totalCount; totalCount++;  return this };
+function spy(func) {
+    let totalCount = 0;
+    return (props) => {
+        totalCount++;
+        this.report = () => totalCount;
+        func(props);
+        return this;
+    }
 }
+
 
 const spied = spy(myFunction);
+const spied2 = spy(myFunction);
 
-spied();
+spied('John');
+spied2('Monika')
+spied('John');
 
-console.log(spied().report);
-
+console.log(spied('John').report(), spied2('Monika').report());
