@@ -1,0 +1,70 @@
+{
+  "posts": [
+    {
+      "date": "2020-08-02",
+      "author": "John Smith",
+      "title": "Serious question nr1",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
+      "tags": ["1", "2", "3", "4", "5"],
+      "viewCount": "15",
+      "answerCount": "0",
+      "votesCount": "18",
+      "id": 1
+    },
+    {
+      "date": "2020-08-02",
+      "author": "John Smith",
+      "title": "Serious question nr1",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
+      "tags": ["1", "2", "3", "4", "5"],
+      "viewCount": "15",
+      "answerCount": "0",
+      "votesCount": "18",
+      "id": 2
+    },
+    {
+      "date": "2020-08-02",
+      "author": "John Smith",
+      "title": "Serious question nr1",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
+      "tags": ["1", "2", "3", "4", "5"],
+      "viewCount": "15",
+      "answerCount": "0",
+      "votesCount": "18",
+      "id": 3
+    },
+    {
+      "date": "2020-08-02",
+      "author": "John Smith",
+      "title": "Serious question nr1",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
+      "tags": ["1", "2", "3", "4", "5"],
+      "viewCount": "15",
+      "answerCount": "0",
+      "votesCount": "18",
+      "id": 4
+    },
+    {
+      "date": "2020-08-02",
+      "author": "John Smith",
+      "title": "Serious question nr1",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
+      "tags": ["1", "2", "3", "4", "5"],
+      "viewCount": "15",
+      "answerCount": "0",
+      "votesCount": "18",
+      "id": 5
+    },
+    {
+      "date": "2020-08-02",
+      "author": "John Smith",
+      "title": "Serious question nr1",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
+      "tags": ["1", "2", "3", "4", "5"],
+      "viewCount": "15",
+      "answerCount": "0",
+      "votesCount": "18",
+      "id": 6
+    }
+  ]
+}
