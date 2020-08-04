@@ -71,7 +71,7 @@ function getForm(obj = null) {
             error = document.getElementById('error');
             error.textContent = 'All fields must be filled';
             error.style.display = 'block';
-            return;
+            return false;
         }
     }
     return obj;

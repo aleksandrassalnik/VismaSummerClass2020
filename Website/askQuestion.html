@@ -9,8 +9,10 @@
     </head>
 
     <body>
-        <div>
-            <form id='question' onsubmit="postForm();return false">
+        <div id="wrapper">
+        <a href="./index.html">Go back</a>
+        <div id="formBackground">
+            <form id='question' onsubmit="postForm(); return false;">
                 <label for="author">Author</label><input name="author" type="text" id="author">
                 <label for="date">Date</label><input name="date" type="date" id="date">
                 <label for="title">Title</label><input name="title" type="text" id="title">
@@ -19,6 +21,7 @@
                 <p id='error'></p>
                 <input id="newPost" type="submit">
             </form>
+        </div>
         </div>
     </body>
     <script src="./javascript/PostDeleteEdit.js"></script>
