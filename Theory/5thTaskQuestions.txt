@@ -1,0 +1,50 @@
+1. What's the difference between a DOM object "attribute" and a "property"?
+Attributes is what's written in HTML tag and properties is what's written in DOM object
+
+2. What are advantages and disadvantages using libraries/frameworks in your project?
+advantages: efficient - frameworks provide you with numerous pre-built functions/methods,
+support - library or framework is usually provided with documentation
+
+disadvantages: by using framework you are restricted by it's functionality,
+frameworks/libraries are public and can be used to utilize it's flaws against you,
+
+
+3. What is a LocalStorage and SessionStorage? How do they differ?
+LocalStorage or SessionStorage is a client-side storage object that allows you to st ore string values in it.
+While LocalStorage's saved values remains even when the browser is closed and opened again the SessionStorage's values gets cleared after the 
+browser tab is closed. LocalStorage's object is bound to same origin which means data is shared with all tabs/pages/url's that share same origin while SessionStorage's object is bound
+to it's browser tab. Both storages will contain same data as before even after page refresh.
+
+4. What is CDN? Why is it useful?
+CDN - content delivery server is a group of servers spread out over many locations.
+These servers store duplicate copies of data so that servers can fulfill data requests based on which servers are closest to the respective end-users
+CDNs are used widely for delivering stylesheets and Javascript files (static assets) of libraries like Bootstrap, jQuery etc.
+
+5. Waiting for all data to load synchronously before being able to act makes UX (user
+experience) terrible. What are the main technologies for asynchronous data loading?
+AJAX, we can also use async await functions or .then();
+
+6. What does XHR stand for? Why is it useful (or not)?
+XMLHttpRequest, it's useful when you need to update a page without reloading it, need to send/get data from server.
+Nowadays we can use fetch API instead which is easier to write and has more functionalities (for example no-cors mode)
+
+7. What are the most common HTTP response codes? Which are related to a success and
+which are related to a failure?
+success:
+200-success
+failure:
+400-bad request
+404-not found
+500-server side error
+
+8. What are promises? How do they differ from callbacks?
+Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+A callback is a function that is to be executed after another function has finished executing
+A key difference between the two is when using the callback approach, we’d normally just pass a callback into a function that would then get called upon completion
+ in order to get the result of something. In promises, however, you attach callbacks on the returned promise object
+
+9. Not all JS code can run on all browsers. What are polyfills? Can you create your own
+polyfill?
+polyfill is code that implements a feature on web browsers that do not support the feature. Yes you can.
+
+
