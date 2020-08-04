@@ -4,9 +4,31 @@
     if (id) {
         fetch(`http://localhost:3000/posts/${id}`)
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                document.getElementById('author').value = data.author;
+                document.getElementById('date').value = data.date;
+                document.getElementById('title').value = data.title;
+                document.getElementById('content').value = data.content;
+                document.getElementById('question').onsubmit = Edit;
+                // console.log(data)
+            })
     }
 })()
+
+function Edit(e) {
+    e.preventDefault();
+    const parsedUrl = new URL(window.location.href);
+    const id = parsedUrl.searchParams.get("id");
+    const obj = getForm();
+    if (obj)
+    Put(obj, id);
+}
+
+function postForm() {
+    const obj = getForm();
+    if (obj)
+    Post(obj);
+}
 
 function getForm() {
     const form = document.querySelector('#question').elements;
@@ -30,12 +52,22 @@ function getForm() {
             return;
         }
     }
-    Post(obj);
+    return obj;
 }
 
 async function Post(obj) {
     await fetch('http://localhost:3000/posts', {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(obj)
+    })
+}
+
+async function Put(obj, id) {
+    await fetch(`http://localhost:3000/posts/${id}`, {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
