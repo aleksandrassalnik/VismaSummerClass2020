@@ -6,6 +6,9 @@
                 data.forEach(elem => {
                     const questionBox = document.createElement('div');
                     questionBox.classList = 'topic bottomBorder';
+                    questionBox.id = elem.id;
+                    questionBox.onclick = Redirect;
+                    questionBox.attributes.onclick = `Redirect()`;
                     const section = document.createElement('section');
                     section.classList = 'question';
                     const title = document.createElement('h1');
