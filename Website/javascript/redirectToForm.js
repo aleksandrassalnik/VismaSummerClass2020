@@ -1,6 +1,6 @@
-function Redirect() {
-    if (this.id) {
-        window.location = `./askQuestion.html?id=${this.id}`;
+function Redirect(id) {
+    if (id) {
+        window.location = `./askQuestion.html?id=${id}`;
     } else window.location = './askQuestion.html';
 }
 

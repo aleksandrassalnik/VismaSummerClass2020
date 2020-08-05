@@ -5,49 +5,40 @@ let editForm = {};
     if (id) {
         fetch(`http://localhost:3000/posts/${id}`)
             .then(response => response.json())
-            .then(data => {
-                editForm = data;
-                document.getElementById('author').value = data.author;
-                document.getElementById('date').value = data.date;
-                document.getElementById('title').value = data.title;
-                document.getElementById('content').value = data.content;
-                const form = document.getElementById('question')
-                form.onsubmit = Edit;
-                const deleteButton = document.createElement('button');
-                deleteButton.onclick = DeletePost;
-                deleteButton.textContent = 'Delete';
-                deleteButton.id = 'delete';
-                deleteButton.type = 'button';
-                form.append(deleteButton);
-            })
+            .then(data => fillForm(data))
     }
 })()
 
-async function DeletePost() {
-    const parsedUrl = new URL(window.location.href);
-    const id = parsedUrl.searchParams.get("id");
-    await fetch(`http://localhost:3000/posts/${id}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    window.location = './index.html';
+function fillForm(data) {
+    editForm = data;
+    const form = document.getElementById('question')
+    form.onsubmit = edit;
+    const deleteButton = `<button onclick="deletePost(); window.location = './index.html';" id="delete" type="button">Delete</button>`;
+    form.innerHTML += deleteButton;
+    document.getElementById('author').value = data.author;
+    document.getElementById('date').value = data.date;
+    document.getElementById('title').value = data.title;
+    document.getElementById('content').value = data.content;
+    document.getElementById('tags').value = data.tags;
 }
 
-function Edit(e) {
+function edit(e) {
     e.preventDefault();
     const parsedUrl = new URL(window.location.href);
     const id = parsedUrl.searchParams.get("id");
     const obj = getForm(editForm);
-    if (obj)
-        Put(obj, id)
+    if (obj) {
+        put(obj, id);
+        window.location = './index.html';
+    }
 }
 
 function postForm() {
     const obj = getForm();
-    if (obj)
-        Post(obj)
+    if (obj) {
+        post(obj);
+        window.location = './index.html';
+    }
 }
 
 function getForm(obj = null) {
@@ -64,20 +55,35 @@ function getForm(obj = null) {
             "votesCount": "0",
         }
     }
+
+    const dateNow = new Date().toISOString().slice(0, 10);
     for (let i = 0; i < 4; i++) {
         if (form[i].value) {
-            obj[form[i].name] = form[i].value;
+            if (dateNow >= form[1].value) {
+                obj[form[i].name] = form[i].value;
+            }
+            else {
+                errorMsg(`Sorry you can't write to the future`)
+                return false;
+            }
         } else {
-            error = document.getElementById('error');
-            error.textContent = 'All fields must be filled';
-            error.style.display = 'block';
+            errorMsg(`All fields (except tags) must be filled`);
             return false;
         }
+    }
+    if (form[4].value) {
+        obj.tags = form[4].value.split(',');
     }
     return obj;
 }
 
-async function Post(obj) {
+function errorMsg(msg) {
+    error = document.getElementById('error');
+    error.textContent = msg;
+    error.style.display = 'block';
+}
+
+async function post(obj) {
     await fetch('http://localhost:3000/posts', {
         method: 'POST',
         headers: {
@@ -85,10 +91,9 @@ async function Post(obj) {
         },
         body: JSON.stringify(obj)
     })
-    window.location = './index.html';
 }
 
-async function Put(obj, id) {
+async function put(obj, id) {
     await fetch(`http://localhost:3000/posts/${id}`, {
         method: 'PUT',
         headers: {
@@ -96,5 +101,15 @@ async function Put(obj, id) {
         },
         body: JSON.stringify(obj)
     })
-    window.location = './index.html';
+}
+
+async function deletePost() {
+    const parsedUrl = new URL(window.location.href);
+    const id = parsedUrl.searchParams.get("id");
+    await fetch(`http://localhost:3000/posts/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
 }

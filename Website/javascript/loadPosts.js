@@ -4,44 +4,7 @@
             .then(data => {
                 const thread = document.getElementById('questionThread');
                 data.forEach(elem => {
-                    const questionBox = document.createElement('div');
-                    questionBox.classList = 'topic bottomBorder';
-                    questionBox.id = elem.id;
-                    questionBox.onclick = Redirect;
-                    questionBox.attributes.onclick = `Redirect()`;
-                    const section = document.createElement('section');
-                    section.classList = 'question';
-                    const title = document.createElement('h1');
-                    title.textContent = elem.title;
-                    title.classList = 'commentHeader';
-                    const comment = document.createElement('p');
-                    comment.textContent = elem.content;
-                    comment.classList = 'comment';
-                    section.append(title);
-                    section.append(comment);
-                    elem.tags.forEach(tag => {
-                        const tagBox = document.createElement('p');
-                        tagBox.textContent = tag;
-                        tagBox.classList = 'tag';
-                        section.append(tagBox);
-                    })
-                    questionBox.append(section);
-                    const statusBars = document.createElement('aside');
-                    statusBars.classList = 'statusBars';
-                    const views = document.createElement('div');
-                    const answers = document.createElement('div');
-                    const votes = document.createElement('div');
-                    views.classList = 'viewsCount';
-                    views.textContent = elem.viewCount;
-                    statusBars.append(views);
-                    answers.classList = 'answersCount';
-                    answers.textContent = elem.answerCount;
-                    statusBars.append(answers);
-                    votes.classList = 'votesCount';
-                    votes.textContent = elem.votesCount;
-                    statusBars.append(votes);
-                    questionBox.append(statusBars);
-                    thread.append(questionBox);
+                    thread.innerHTML += createQuestion(elem);
                 })
             });
     }
@@ -49,3 +12,42 @@
         console.error(e);
     }
 })()
+
+function createQuestion(elem) {
+    const url = new URL(window.location.href);
+    if (url.pathname !== '/Website/newQuestions.html')
+        return `<div class="topic bottomBorder" onclick="Redirect(${elem.id})">
+                            <section class="question" >
+                                <h1 class="commentHeader">${elem.title}</h1>
+                                <p class="comment">${elem.content}</p>
+                                ${getTags(elem)}
+                            </section>
+                        <aside class="statusBars">
+                            <div class="viewsCount">${elem.viewCount}</div>
+                            <div class="answersCount">${elem.answerCount}</div>
+                            <div class="votesCount">${elem.votesCount}</div>
+                        </aside>`
+    else {
+        if (elem.date === new Date().toISOString().slice(0, 10))
+            return `<div class="topic bottomBorder" onclick="Redirect(${elem.id})">
+                            <section class="question" >
+                                <h1 class="commentHeader">${elem.title}</h1>
+                                <p class="comment">${elem.content}</p>
+                                ${getTags(elem)}
+                            </section>
+                        <aside class="statusBars">
+                            <div class="viewsCount">${elem.viewCount}</div>
+                            <div class="answersCount">${elem.answerCount}</div>
+                            <div class="votesCount">${elem.votesCount}</div>
+                        </aside>`
+        else return '';
+    }
+}
+
+function getTags(elem) {
+    let tags = '';
+    elem.tags.forEach(tag => {
+        tags += `<p class="tag">${tag}</p>`;
+    })
+    return tags;
+}

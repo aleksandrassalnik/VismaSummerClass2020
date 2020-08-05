@@ -4,12 +4,15 @@ let myFunction = (name = '') => {
 
 function spy(func) {
     let totalCount = 0;
-    return (props) => {
+    const wrapper = (props) => {
         totalCount++;
-        this.report = () => totalCount;
-        func(props);
-        return this;
+        return func(props);
     }
+    wrapper.report = () => {
+        return totalCount;
+    }
+
+    return wrapper;
 }
 
 
@@ -17,7 +20,7 @@ const spied = spy(myFunction);
 const spied2 = spy(myFunction);
 
 spied('John');
-spied2('Monika')
+spied2('Monika');
 spied('John');
 
-console.log(spied('John').report(), spied2('Monika').report());
+console.log(spied.report(), spied2.report());

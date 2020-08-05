@@ -1,8 +1,8 @@
 {
   "posts": [
     {
+      "author": "John Smith",
       "date": "2020-08-02",
-      "author": "John Smithuioiuo",
       "title": "Serious question nr1",
       "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
       "tags": [
@@ -12,43 +12,73 @@
         "4",
         "5"
       ],
-      "viewCount": "15",
-      "answerCount": "0",
-      "votesCount": "18",
-      "id": 1
-    },
-    {
-      "author": "John Smith",
-      "date": "2020-08-02",
-      "title": "Serious question nr1",
-      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
-      "tags": [],
       "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 8
-    },
-    {
-      "author": "John Smith",
-      "date": "2020-08-02",
-      "title": "Serious question nr1",
-      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
-      "tags": [],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
+      "answerCount": "3",
+      "votesCount": "-5",
       "id": 9
     },
     {
-      "author": "kjhk",
-      "date": "2020-08-12",
-      "title": "kjhkh",
-      "content": "jhj",
-      "tags": [],
+      "author": "John Smith",
+      "date": "2020-08-04",
+      "title": "a",
+      "content": "a",
+      "tags": [
+        "a"
+      ],
       "viewCount": "0",
       "answerCount": "0",
       "votesCount": "0",
       "id": 10
+    },
+    {
+      "author": "a",
+      "date": "2020-08-05",
+      "title": "a",
+      "content": "a",
+      "tags": [],
+      "viewCount": "0",
+      "answerCount": "0",
+      "votesCount": "0",
+      "id": 11
+    },
+    {
+      "author": "1",
+      "date": "2020-08-04",
+      "title": "1",
+      "content": "1",
+      "tags": [
+        "1"
+      ],
+      "viewCount": "0",
+      "answerCount": "0",
+      "votesCount": "0",
+      "id": 12
+    },
+    {
+      "author": "2",
+      "date": "2020-08-05",
+      "title": "2",
+      "content": "2",
+      "tags": [
+        "2"
+      ],
+      "viewCount": "0",
+      "answerCount": "0",
+      "votesCount": "0",
+      "id": 13
+    },
+    {
+      "author": "dsa",
+      "date": "2020-08-05",
+      "title": "h",
+      "content": "h",
+      "tags": [
+        "h"
+      ],
+      "viewCount": "0",
+      "answerCount": "0",
+      "votesCount": "0",
+      "id": 24
     }
   ]
 }
