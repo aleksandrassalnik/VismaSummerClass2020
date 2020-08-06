@@ -16,30 +16,10 @@
 function createQuestion(elem) {
     const url = new URL(window.location.href);
     if (url.pathname !== '/Website/newQuestions.html')
-        return `<div class="topic bottomBorder" onclick="Redirect(${elem.id})">
-                            <section class="question" >
-                                <h1 class="commentHeader">${elem.title}</h1>
-                                <p class="comment">${elem.content}</p>
-                                ${getTags(elem)}
-                            </section>
-                        <aside class="statusBars">
-                            <div class="viewsCount">${elem.viewCount}</div>
-                            <div class="answersCount">${elem.answerCount}</div>
-                            <div class="votesCount">${elem.votesCount}</div>
-                        </aside>`
+        return formQuestion(elem);
     else {
         if (elem.date === new Date().toISOString().slice(0, 10))
-            return `<div class="topic bottomBorder" onclick="Redirect(${elem.id})">
-                            <section class="question" >
-                                <h1 class="commentHeader">${elem.title}</h1>
-                                <p class="comment">${elem.content}</p>
-                                ${getTags(elem)}
-                            </section>
-                        <aside class="statusBars">
-                            <div class="viewsCount">${elem.viewCount}</div>
-                            <div class="answersCount">${elem.answerCount}</div>
-                            <div class="votesCount">${elem.votesCount}</div>
-                        </aside>`
+            return formQuestion(elem);
         else return '';
     }
 }
@@ -50,4 +30,18 @@ function getTags(elem) {
         tags += `<p class="tag">${tag}</p>`;
     })
     return tags;
+}
+
+function formQuestion(elem) {
+    return `<div class="topic bottomBorder" onclick="Redirect(${elem.id})">
+                <section class="question" >
+                    <h1 class="commentHeader">${elem.title}</h1>
+                    <p class="comment">${elem.content}</p>
+                    ${getTags(elem)}
+                </section>
+            <aside class="statusBars">
+                <div class="viewsCount">${elem.viewCount}</div>
+                <div class="answersCount">${elem.answerCount}</div>
+                <div class="votesCount">${elem.votesCount}</div>
+            </aside>`
 }

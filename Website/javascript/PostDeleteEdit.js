@@ -33,10 +33,10 @@ function edit(e) {
     }
 }
 
-function postForm() {
+async function postForm() {
     const obj = getForm();
     if (obj) {
-        post(obj);
+        await post(obj);
         window.location = './index.html';
     }
 }

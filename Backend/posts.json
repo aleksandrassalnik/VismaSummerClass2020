@@ -16,69 +16,6 @@
       "answerCount": "3",
       "votesCount": "-5",
       "id": 9
-    },
-    {
-      "author": "John Smith",
-      "date": "2020-08-04",
-      "title": "a",
-      "content": "a",
-      "tags": [
-        "a"
-      ],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 10
-    },
-    {
-      "author": "a",
-      "date": "2020-08-05",
-      "title": "a",
-      "content": "a",
-      "tags": [],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 11
-    },
-    {
-      "author": "1",
-      "date": "2020-08-04",
-      "title": "1",
-      "content": "1",
-      "tags": [
-        "1"
-      ],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 12
-    },
-    {
-      "author": "2",
-      "date": "2020-08-05",
-      "title": "2",
-      "content": "2",
-      "tags": [
-        "2"
-      ],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 13
-    },
-    {
-      "author": "dsa",
-      "date": "2020-08-05",
-      "title": "h",
-      "content": "h",
-      "tags": [
-        "h"
-      ],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 24
     }
   ]
 }

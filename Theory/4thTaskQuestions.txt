@@ -102,7 +102,7 @@ NodeJS is a JavaScript runtime environment(Framework) that executes JavaScript c
 Creating server-side applications or API's.
 
 26.What is the difference between normal function and arrow function? 
-normal function 'this' value is dynamice while in arrow function 'this' value is lexical (doesn't define its own execution context)
+normal function 'this' value is dynamic while in arrow function 'this' value is lexical (doesn't define its own execution context)
 normal functions can be used as constructors while arrow functions can't
 arguments are passed the same way as 'this' 
 when arrow function contains only one expression you don't need to write return while in normal functions it will end in returning undefined

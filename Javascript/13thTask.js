@@ -4,4 +4,4 @@ const say = (word) => {
     }
 }
 
-console.log(say('Hello,')('it\'s me'));
+console.log(say(`Hello,`)(`it's me`));
