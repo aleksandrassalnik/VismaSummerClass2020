@@ -33,7 +33,7 @@ function getTags(elem) {
 }
 
 function formQuestion(elem) {
-    return `<div class="topic bottomBorder" onclick="Redirect(${elem.id})">
+    return `<div class="topic bottomBorder" onclick="redirect(${elem.id})">
                 <section class="question" >
                     <h1 class="commentHeader">${elem.title}</h1>
                     <p class="comment">${elem.content}</p>

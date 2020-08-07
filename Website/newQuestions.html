@@ -46,18 +46,16 @@
             <input type="checkbox" name="leftPanelSlider" id="leftPanelSlider">
             <aside id="leftPanel">
                 <div class="bottomBorder">
-                    <a href="./askQuestion.html">
-                        <button id="askQuestionButton">
-                            ASK A QUESTION
-                        </button>
-                    </a>
+                    <button id="askQuestionButton" onClick="redirect()">
+                        ASK A QUESTION
+                    </button>
                 </div>
 
                 <div class="bottomBorder">
-                    <a href="./index.html">
+                    <a href="./newQuestions.html">
                         <button class="leftPanelMenuButtons">
                             <i class="questionsIcon menuIcons"></i>
-                            <label for="" class="leftPanelMenuLabel">All Questions</label>
+                            <label for="" class="leftPanelMenuLabel">New Questions</label>
                         </button>
                     </a>
                     <button class="leftPanelMenuButtons">
@@ -176,4 +174,5 @@
     </body>
     <script src="./javascript/loadPosts.js"></script>
     <script src="./javascript/redirectToForm.js"></script>
+
 </html>
