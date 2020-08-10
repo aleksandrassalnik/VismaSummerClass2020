@@ -1,0 +1,47 @@
+@media only screen and (max-width: 400px) {
+  #grid {
+    width:100nw;
+  }
+  #leftPanelSlider:checked,
+  #rightPanelSlider:checked {
+    margin-left: 80%;
+  }
+
+  /* Left panel css */
+
+  #leftPanel,
+  #rightPanel {
+    width: 80%;
+  }
+
+  #searchBox, #searchSubmit {
+    display:none ;
+  }
+
+  #navButtons {
+    min-width:3em;
+  }
+  
+  #logo {
+    width:100%;
+  }
+
+  #navRegister {
+    width:30%;
+  }
+
+  #navSearch {
+    width:50%;
+  }
+
+  .statusBars {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top:2em;
+  }
+
+  .viewsCount, .answersCount, .votesCount{
+    margin-top: 1.5rem;
+  } 
+}
