@@ -13,11 +13,9 @@ const template = {
         </aside>`;
     },
     tags: (elem) => {
-        let tags = '';
-        elem.tags.forEach(tag => {
-            tags += `<p class="tag">${tag}</p>`;
-        })
-        return tags;
+        return elem.tags.reduce((total, tag) => {
+           return  total + `<p class="tag">${tag}</p>`;
+        }, '');
     },
     deleteButton: `<button id="delete" type="button">Delete</button>`
 };

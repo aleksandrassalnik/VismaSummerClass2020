@@ -1,31 +1,47 @@
 import link from './links.js';
 import template from './templates.js';
-(() => {
+import Rest from './rest.js';
+const rest = new Rest();
+
+(async () => {
+    document.querySelector("#newPost").addEventListener('click', postForm)
     let editForm = {};
     const parsedUrl = new URL(window.location.href);
     const id = parsedUrl.searchParams.get("id");
+
     if (id) {
-        fetch(`${link.database}/${id}`)
-            .then(response => response.json())
-            .then(data => fillForm(data))
+        fillForm(await rest.get(link.database, id));
     }
 
+    async function postForm() {
+        const obj = getForm();
+        if (obj) {
+            await rest.post(link.database, obj);
+            window.location = './index.html';
+        }
+    }
+
+    function edit() {
+        const obj = getForm(editForm);
+        if (obj) {
+            rest.put(link.database, obj, id);
+            window.location = './index.html';
+        }
+    }
 
     function fillForm(data) {
         editForm = data;
+        //Adding edit function instead of post on submit button.
+        document.getElementById('newPost').removeEventListener('click', postForm);
+        document.getElementById('newPost').addEventListener('click', edit);
+        
         const form = document.getElementById('question');
-        form.onsubmit = edit;
+        
+        //Adding delete button. 
         form.insertAdjacentHTML('beforeend', template.deleteButton);
-        document.querySelector("#delete").addEventListener('click', async function deletePost() {
-            await fetch(`${link.database}/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            window.location = './index.html'
-        }
-        )
+        document.querySelector("#delete").addEventListener('click', deletePost)
+
+        //Filling form data
         document.getElementById('author').value = data.author;
         document.getElementById('date').value = data.date;
         document.getElementById('title').value = data.title;
@@ -33,21 +49,9 @@ import template from './templates.js';
         document.getElementById('tags').value = data.tags;
     }
 
-    function edit(e) {
-        e.preventDefault();
-        const obj = getForm(editForm);
-        if (obj) {
-            put(obj, id);
-            window.location = './index.html';
-        }
-    }
-
-    async function postForm() {
-        const obj = getForm();
-        if (obj) {
-            await post(obj);
-            window.location = './index.html';
-        }
+    async function deletePost() {
+        rest.delete(link.database, id);
+        window.location = './index.html'
     }
 
     function getForm(obj = null) {
@@ -65,21 +69,24 @@ import template from './templates.js';
             }
         }
 
+        //getting todays data and transforming to yyyy-mm-dd format
         const dateNow = new Date().toISOString().slice(0, 10);
-        for (let i = 0; i < 4; i++) {
-            if (form[i].value) {
-                if (dateNow >= form[1].value) {
-                    obj[form[i].name] = form[i].value;
-                }
-                else {
-                    errorMsg(`Sorry you can't write to the future`)
-                    return false;
-                }
-            } else {
-                errorMsg(`All fields (except tags) must be filled`);
-                return false;
-            }
-        }
+
+        //Converting form from object to array
+        const formArr = Object.values(form);
+        //Form validation and writting into object
+        formArr.reduce((total, current, index, array) => {
+            if (current.name) {
+                if (current.value) {
+                    if (dateNow >= array[1].value) {
+                        obj[current.name] = current.value;
+                    }
+                    else {
+                        errorMsg(`Sorry you can't write to the future`);
+                    }
+                } else errorMsg(`All fields (except tags) must be filled`);
+            } 
+        }, '')
         if (form[4].value) {
             obj.tags = form[4].value.split(',');
         }
@@ -87,28 +94,9 @@ import template from './templates.js';
     }
 
     function errorMsg(msg) {
-        error = document.getElementById('error');
+        const error = document.getElementById('error');
         error.textContent = msg;
         error.style.display = 'block';
-    }
-
-    async function post(obj) {
-        await fetch(link.database, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(obj)
-        })
-    }
-
-    async function put(obj, id) {
-        await fetch(`${link.database}/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(obj)
-        })
+        return false;
     }
 })()

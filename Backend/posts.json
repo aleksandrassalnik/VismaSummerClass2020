@@ -3,7 +3,7 @@
     {
       "author": "John Smith",
       "date": "2020-08-06",
-      "title": "Serious question nr8",
+      "title": "Serious question nr1",
       "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
       "tags": [
         "1",
@@ -17,6 +17,28 @@
       "answerCount": "3",
       "votesCount": "-5",
       "id": 16
+    },
+    {
+      "author": "1",
+      "date": "2020-08-11",
+      "title": "1",
+      "content": "1",
+      "tags": [],
+      "viewCount": "0",
+      "answerCount": "0",
+      "votesCount": "0",
+      "id": 17
+    },
+    {
+      "author": "1",
+      "date": "2020-08-11",
+      "title": "1",
+      "content": "12",
+      "tags": [],
+      "viewCount": "0",
+      "answerCount": "0",
+      "votesCount": "0",
+      "id": 18
     }
   ]
 }

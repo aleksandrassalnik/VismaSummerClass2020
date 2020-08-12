@@ -1,6 +1,7 @@
 import template from './templates.js';
 import link from './links.js';
 (() => {
+    //Loading questions
     try {
         fetch(link.database).then(response => response.json())
             .then(data => {
