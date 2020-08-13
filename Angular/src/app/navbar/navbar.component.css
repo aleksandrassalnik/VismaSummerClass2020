@@ -93,23 +93,6 @@ header {
   zoom: 0.75;
 }
 
-.clickableText {
-  cursor: pointer;
-  font-size: smaller;
-  color: rgb(51, 190, 221);
-}
-
-.clickableText:hover {
-  color: rgb(45, 164, 190);
-}
-
-.truncateText {
-  white-space: nowrap;
-  word-break: break-all;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 /*Big screen*/
 @media only screen and (min-width: 1000px) {
   #navigationBar,
@@ -133,7 +116,7 @@ header {
     display: flex;
     justify-content: space-between;
   }
-  
+
   .dropdownIcon {
     display:none;
   }

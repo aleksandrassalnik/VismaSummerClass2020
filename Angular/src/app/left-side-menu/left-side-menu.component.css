@@ -1,0 +1,220 @@
+#socialButtons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+#socialButtons .leftPanelMenuButtons {
+  display: inline;
+}
+
+.leftPanelSocialButtons {
+  width: 33%;
+  padding: 0;
+  justify-content: center;
+}
+
+.leftPanelMenuButtons {
+  width: 90%;
+  padding: 0 1em;
+  justify-items: start;
+}
+
+.leftPanelSocialButtons div {
+  padding: 0;
+  transform: scale(0.8);
+}
+
+.leftPanelMenuButtons,
+.leftPanelSocialButtons {
+  outline: 0;
+  border: 0;
+  display: flex;
+  margin: 1em 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+.leftPanelMenuButtons:hover .leftPanelMenuLabel,
+.leftPanelMenuButtons:hover .menuIcons {
+  transform: scale(1.1);
+}
+
+.leftPanelMenuLabel {
+  margin: auto 0 auto 1em;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#leftPanel {
+  border-right: 2px solid rgb(238, 237, 237);
+  height: 100%;
+}
+
+#askQuestionButton {
+  cursor: pointer;
+  font-size: large;
+  color: white;
+  display: block;
+  width: 90%;
+  height: 50px;
+  background-color: rgb(112, 112, 230);
+  border: 0;
+  border-radius: 5px;
+  margin: 25px auto;
+}
+
+#askQuestionButton:focus {
+  outline: 0;
+}
+
+#askQuestionButton:active {
+  background: rgb(85, 85, 173);
+}
+
+.questionsIcon,
+.tagsIcon,
+.badgesIcon,
+.categoriesIcon,
+.usersIcon {
+  background-image: url("../sprites/icon_sprites.png");
+  background-repeat: no-repeat;
+}
+
+.questionsIcon {
+  background-position: -242px -106px;
+}
+
+.tagsIcon {
+  background-position: -276px -174px;
+}
+
+.badgesIcon {
+  background-position: -378px -38px;
+}
+
+.categoriesIcon {
+  background-position: -413px -276px;
+}
+
+.usersIcon {
+  background-position: -378px -138px;
+}
+
+.facebook,
+.twitter,
+.google {
+  background-image: url("../sprites/socialMediaSprites.png");
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+.facebook {
+  background-position: -349px -142px;
+  width: 36px;
+  height: 35px;
+}
+
+.twitter {
+  background-position: -864px -790px;
+  width: 38px;
+  height: 36px;
+}
+
+.google {
+  background-position: -218px -793px;
+  width: 41px;
+  height: 33px;
+}
+
+.facebook:hover {
+  background-position: -350px -792px;
+  overflow: hidden;
+  width: 31px;
+  height: 32px;
+}
+
+.twitter:hover {
+  background-position: -864px -140px;
+}
+
+.google:hover {
+  background-position: -218px -145px;
+}
+
+/*Big screem*/
+
+@media only screen and (min-width: 1000px) {
+  #leftPanel {
+    position: fixed;
+    top: 41px;
+    width: 16%;
+    grid-area: left;
+  }
+
+  #leftPanelSlider {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #leftPanelSlider:focus {
+    outline: 0;
+  }
+
+  #leftPanelSlider {
+    z-index: 1;
+    -webkit-appearance: none;
+    position: fixed;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+    margin: 0;
+    top: 7%;
+    margin-top: 2rem;
+    height: 2rem;
+    padding: 2rem 0.75rem;
+    border: 1px solid rgb(238, 237, 237);
+    background-color: rgb(35, 35, 59);
+  }
+
+  #leftPanelSlider:checked + #leftPanel {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+
+  #leftPanelSlider:hover {
+    cursor: pointer;
+  }
+
+  #leftPanelSlider:checked {
+    margin-left: 50%;
+  }
+
+  #leftPanel,
+  #leftPanelSlider {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+  }
+
+  #leftPanel {
+    overflow: visible;
+    overflow-y: auto;
+    z-index: 2;
+    bottom: 0;
+    position: fixed;
+    top: 41px;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    background-color: white;
+    width: 50%;
+    scale: 0;
+  }
+}
