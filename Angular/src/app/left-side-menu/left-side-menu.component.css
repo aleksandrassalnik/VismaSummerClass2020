@@ -51,6 +51,7 @@
 #leftPanel {
   border-right: 2px solid rgb(238, 237, 237);
   height: 100%;
+  background-color: white;
 }
 
 #askQuestionButton {
@@ -144,20 +145,21 @@
   background-position: -218px -145px;
 }
 
-/*Big screem*/
+/*Big screen*/
 
 @media only screen and (min-width: 1000px) {
   #leftPanel {
-    position: fixed;
+    display: inline-block;
     top: 41px;
     width: 16%;
-    grid-area: left;
   }
 
   #leftPanelSlider {
     display: none;
   }
 }
+
+/*Medium screen*/
 
 @media only screen and (max-width: 1000px) {
   #leftPanelSlider:focus {

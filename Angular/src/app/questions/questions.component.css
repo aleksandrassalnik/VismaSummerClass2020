@@ -1,0 +1,127 @@
+#main {
+  display: inline-block;
+  height: 100%;
+}
+
+#main div {
+  width: 100%;
+}
+
+#questionCategory div {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+#questionPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#questionCategory {
+  width: 100%;
+}
+
+#questionPage div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#questionPage {
+  height: 2.5rem;
+}
+
+select {
+  background-color: rgb(252, 250, 250);
+  border: 1px solid rgb(238, 237, 237);
+  border-radius: 3px;
+  max-height: 1.5em;
+  margin: auto;
+  display: inline;
+  font-size: medium;
+  margin-right: 15px;
+}
+
+#selectHeader {
+  margin: auto 0 auto 2em;
+}
+
+select:focus {
+  outline: 0;
+}
+
+.topic {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Colors every secont element starting from the first one */
+.topic:nth-child(2n-1) {
+  background-color: rgb(252, 250, 250);
+}
+
+/* Colors  answer icons with every secont element*/
+.topic:nth-child(2n-1) .answersCount {
+  color: white;
+  background: radial-gradient(
+    circle,
+    rgb(164, 231, 194) 30%,
+    rgb(128, 182, 151) 100%
+  );
+}
+
+.topic:nth-child(2n) .answersCount {
+  background: radial-gradient(
+    circle,
+    rgba(252, 250, 250, 1) 40%,
+    rgb(240, 239, 239) 100%
+  );
+}
+
+.question {
+  width: 100%;
+  padding: 2rem;
+}
+
+.statusBars {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .viewsCount,
+  .answersCount,
+  .votesCount {
+    cursor: pointer;
+    transform: rotate(2deg);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px !important;
+    border: 2px solid rgb(238, 237, 237);
+    margin-right: 25px;
+    background-color: transparent;
+  }
+  
+  .viewsCount,
+  .votesCount {
+    background: radial-gradient(
+      circle,
+      rgba(252, 250, 250, 1) 40%,
+      rgb(240, 239, 239) 100%
+    );
+  }
+  
+  .comment,
+  .commentHeader {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
