@@ -1,0 +1,223 @@
+#logo {
+  color: white;
+  margin: auto 0px auto 25px;
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#searchSubmit {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  margin-top: 2px;
+  margin-left: -30px;
+  padding: 4px 1px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#navigationBar,
+header {
+  z-index: 1;
+  position: sticky;
+  height: 41px;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  background-color: rgb(35, 35, 59);
+}
+
+#navSearch {
+  display: flex;
+}
+
+#searchBox {
+  width: 250px;
+  height: 1.2rem;
+  padding: 0 1em;
+  border: 0;
+  outline: 0;
+  border-radius: 13px;
+}
+
+#searchBoxAlign {
+  display: flex;
+  margin: auto;
+}
+
+#navButtons {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(15, 15, 39);
+}
+
+.navButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: lightgray;
+  font-size: small;
+  cursor: pointer;
+}
+
+.navButton:hover {
+  color: gray;
+}
+
+#navRegister {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 3px;
+  width: 16%;
+}
+
+.dropdownIcon {
+  background-image: url("../sprites/24_list_view.png");
+  background-repeat: no-repeat;
+  background-position: -31px -5px;
+  margin: 0.75em -1em 0 1em;
+  width: 20px;
+  height: 26px;
+  padding: 0;
+}
+
+.searchIcon {
+  background-image: url("../sprites/icon_sprites.png");
+  background-repeat: no-repeat;
+  background-position: -242px -310px;
+  zoom: 0.75;
+}
+
+.clickableText {
+  cursor: pointer;
+  font-size: smaller;
+  color: rgb(51, 190, 221);
+}
+
+.clickableText:hover {
+  color: rgb(45, 164, 190);
+}
+
+.truncateText {
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*Big screen*/
+@media only screen and (min-width: 1000px) {
+  #navigationBar,
+  header {
+    grid-area: nav;
+    align-content: space-between;
+  }
+
+  #navSearch {
+    display: flex;
+    width: 59%;
+  }
+
+  #navButtons {
+    width: 25%;
+    padding: 0 1em;
+  }
+
+  #navbarDropdownContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .dropdownIcon {
+    display:none;
+  }
+}
+
+/*Medium screen*/
+
+@media only screen and (max-width: 1000px) {
+  header,
+  #navigationBar {
+    z-index: 3;
+  }
+
+  #navSearch {
+    width: 100%;
+  }
+  #navButtons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 4em;
+    padding: 0;
+    margin: 0;
+  }
+
+  #navButtons:hover .dropdownIcon {
+    background-position: -118px -5px;
+  }
+
+  #navButtons:hover #navbarDropdownContent {
+    display: block;
+  }
+
+  #navbarDropdownContent {
+    position: absolute;
+    top: 41px;
+    background-color: rgb(15, 15, 39);
+  }
+
+  #logo {
+    padding: 0 0.5em 0 0;
+  }
+
+  .navButton {
+    font-size: 0.9em;
+    padding: 0.5em;
+  }
+
+  #navRegister {
+    padding: 0 0.5em;
+  }
+
+  #navButtons #navbarDropdownContent {
+    display: none;
+    z-index: 3;
+  }
+
+  #searchBox,
+  #searchSubmit {
+    display: none;
+  }
+}
+
+/*Small screen*/
+
+@media only screen and (max-width: 400px) {
+  #searchBox,
+  #searchSubmit {
+    display: none;
+  }
+
+  #navButtons {
+    min-width: 3em;
+  }
+
+  #logo {
+    width: 100%;
+  }
+
+  #navRegister {
+    width: 30%;
+  }
+
+  #navSearch {
+    width: 50%;
+  }
+}
