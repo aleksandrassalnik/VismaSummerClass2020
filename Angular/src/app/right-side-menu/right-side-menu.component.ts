@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-right-side-menu',
   templateUrl: './right-side-menu.component.html',
-  styleUrls: ['./right-side-menu.component.css']
+  styleUrls: ['./right-side-menu.component.scss'],
 })
 export class RightSideMenuComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

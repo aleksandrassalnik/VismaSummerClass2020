@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from '../rest.service';
+import { Database } from '../databaseTemplate';
 
 @Component({
   selector: 'app-questions',
   templateUrl: './questions.component.html',
-  styleUrls: ['./questions.component.css']
+  styleUrls: ['./questions.component.scss']
 })
 export class QuestionsComponent implements OnInit {
 
-  constructor() { }
+  questions: Database[];
+
+  get(): void {
+    this.restService.get().subscribe((questions) => (this.questions = questions));
+  }
+
+  constructor(private restService: RestService) { }
 
   ngOnInit(): void {
+    this.get();
   }
 
 }

@@ -5,6 +5,7 @@ app-navbar {
   width: 100%;
   top: 0;
   z-index: 3;
+  grid-area: nav;
 }
 
 @media screen and (min-width: 1000px) {
@@ -26,12 +27,14 @@ app-navbar {
   app-right-side-menu {
     grid-area: right;
     height: 100%;
+    top:41px;
   }
 
   #grid {
-    min-height: 100%;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 16% auto 16%;
-    grid-template-areas: "left main right";
+    grid-template-rows:41px auto;
+    grid-template-areas: "nav nav nav" "left main right";
   }
 }
