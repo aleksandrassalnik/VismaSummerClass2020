@@ -1,0 +1,37 @@
+app-navbar {
+  position: fixed;
+  display: block;
+  height: 41px;
+  width: 100%;
+  top: 0;
+  z-index: 3;
+}
+
+@media screen and (min-width: 1000px) {
+  app-left-side-menu {
+    position: fixed;
+    width: 16%;
+    top: 41px;
+    height: 100vh;
+    border-right: 2px solid rgb(238, 237, 237);
+    grid-area: left;
+    z-index: 1;
+  }
+
+  app-questions {
+    grid-area: main;
+    height: 100%;
+  }
+
+  app-right-side-menu {
+    grid-area: right;
+    height: 100%;
+  }
+
+  #grid {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 16% auto 16%;
+    grid-template-areas: "left main right";
+  }
+}

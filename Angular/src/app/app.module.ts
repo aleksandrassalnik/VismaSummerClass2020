@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LeftSideMenuComponent } from './left-side-menu/left-side-menu.component';
 import { RightSideMenuComponent } from './right-side-menu/right-side-menu.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { FormComponent } from './form/form.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { QuestionsComponent } from './questions/questions.component';
     NavbarComponent,
     LeftSideMenuComponent,
     RightSideMenuComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    FormComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

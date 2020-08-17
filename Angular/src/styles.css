@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+html,
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
+
 
 i {
   padding: 13px 13px;
@@ -77,4 +80,15 @@ i {
 
 a {
   text-decoration: none;
+}
+
+app-root {
+  width:100%;
+}
+
+app-form {
+  display:flex;
+  justify-self: center;
+  flex-direction: column;
+  height:100vh;
 }

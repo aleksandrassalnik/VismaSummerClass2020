@@ -1,8 +1,5 @@
 #main {
-  float:right;
-  width:68%;
-  height: 100%;
-
+  display: inline-block;
 }
 
 #main div {
@@ -87,12 +84,6 @@ select:focus {
   padding: 2rem;
 }
 
-.statusBars {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: space-between;
-}
-
 .viewsCount,
 .answersCount,
 .votesCount {
@@ -128,8 +119,29 @@ select:focus {
   -webkit-box-orient: vertical;
 }
 
+.statusBars {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 @media only screen and (max-width: 1000px) {
-    #main {
-        width:100%;
-    }
+  #main {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .viewsCount,
+  .answersCount,
+  .votesCount {
+    margin-top: 1.5rem;
+  }
+
+  .statusBars {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 2em;
+  }
 }

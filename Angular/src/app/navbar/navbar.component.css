@@ -7,7 +7,6 @@
   text-overflow: ellipsis;
 }
 
-
 #searchSubmit {
   background-color: transparent;
   border: 0;
@@ -19,14 +18,9 @@
   cursor: pointer;
 }
 
-#navigationBar,
-header {
+#navigationBar {
   z-index: 1;
-  position: sticky;
   height: 41px;
-  top: 0px;
-  margin: 0;
-  width: 100%;
   display: flex;
   background-color: rgb(35, 35, 59);
 }
@@ -118,7 +112,7 @@ header {
   }
 
   .dropdownIcon {
-    display:none;
+    display: none;
   }
 }
 
