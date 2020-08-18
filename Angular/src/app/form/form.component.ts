@@ -13,7 +13,17 @@ export class FormComponent implements OnInit {
   constructor(public formDataService: FormDataService) {}
 
   ngOnInit(): void {
-    this.data = this.formDataService.data;
+    if (this.formDataService.data) this.data = this.formDataService.data;
+    else this.data = {
+      author: '',
+      date: new Date(),
+      title: '',
+      content: '',
+      tags: [],
+      viewCount: 0,
+      answerCount: 0,
+      votesCount: 0
+    };
   }
 
   ngOnDestroy(): void {
