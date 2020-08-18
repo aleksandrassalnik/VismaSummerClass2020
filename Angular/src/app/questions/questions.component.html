@@ -1,5 +1,25 @@
 <main id="main">
-    <div *ngFor="let question of questions" class="topic bottomBorder">
+    <div class="bottomBorder" id="questionCategory">
+        <div>
+            <h4 id="selectHeader">All Questions</h4>
+            <select>
+                <option>
+                    Lorem, ipsum dolor.
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="bottomBorder" id="questionPage">
+        <div>
+            <select>
+                <option>
+                    Lorem, ipsum.
+                </option>
+            </select>
+        </div>
+    </div>
+    <div *ngFor="let question of questions" class="topic bottomBorder" (click)="onSelect(question)" routerLink="/form">
         <section class="question">
             <h1 class="commentHeader">{{question.title}}</h1>
             <p class="comment">{{question.content}}</p>
