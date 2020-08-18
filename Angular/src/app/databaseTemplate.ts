@@ -7,4 +7,5 @@ export interface Database {
   viewCount: number;
   answerCount: number;
   votesCount: number;
+  id: number;
 }
