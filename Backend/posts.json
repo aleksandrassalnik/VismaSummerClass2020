@@ -3,7 +3,7 @@
     {
       "author": "John Smith",
       "date": "2020-08-06",
-      "title": "Serious question nr1",
+      "title": "Serious question nr123",
       "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
       "tags": [
         "1",
@@ -21,7 +21,7 @@
     {
       "author": "1",
       "date": "2020-08-11",
-      "title": "1",
+      "title": "12",
       "content": "1",
       "tags": [
         "1",
@@ -38,79 +38,6 @@
       "answerCount": "0",
       "votesCount": "0",
       "id": 17
-    },
-    {
-      "author": "1",
-      "date": "2020-08-11",
-      "title": "1",
-      "content": "12",
-      "tags": [
-        "5",
-        "8",
-        "9",
-        "7",
-        "8",
-        "5",
-        "1",
-        "3"
-      ],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 18
-    },
-    {
-      "author": "1",
-      "date": "2020-08-11",
-      "title": "1",
-      "content": "12",
-      "tags": [
-        "5",
-        "8",
-        "9",
-        "7",
-        "8",
-        "5",
-        "1",
-        "3"
-      ],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 19
-    },
-    {
-      "author": "1",
-      "date": "2020-08-11",
-      "title": "1",
-      "content": "12",
-      "tags": [
-        "5",
-        "8",
-        "9",
-        "7",
-        "8",
-        "5",
-        "1",
-        "3"
-      ],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 20
-    },
-    {
-      "author": "1",
-      "date": "2020-08-18",
-      "title": "1",
-      "content": "1",
-      "tags": [
-        "1"
-      ],
-      "viewCount": "0",
-      "answerCount": "0",
-      "votesCount": "0",
-      "id": 21
     }
   ]
 }

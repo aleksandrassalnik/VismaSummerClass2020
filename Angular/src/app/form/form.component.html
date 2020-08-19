@@ -10,6 +10,7 @@
             <label for="tags">Tags (comma delimited)</label><input id="tags" type="text" [(ngModel)]='data.tags' name='tags'>
             <p id='error'></p>
             <button id="newPost" routerLink="" (click)="save()" type="button">Submit</button>
+            <button id="delete"  routerLink="" type="button" (click)="delete()">Delete</button>
         </form>
     </div>
 </div>

@@ -33,7 +33,13 @@ export class FormComponent implements OnInit {
   }
 
   save(): void {
-    this.restService.put(this.data);
+    if (this.data.id) {
+      this.restService.put(this.data).subscribe();
+    } else this.restService.post(this.data).subscribe();
+  }
+
+  delete(): void {
+    this.restService.delete(this.data.id).subscribe();
   }
 
   ngOnDestroy(): void {
