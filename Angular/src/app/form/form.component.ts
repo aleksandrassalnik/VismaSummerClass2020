@@ -10,6 +10,15 @@ import { VirtualTimeScheduler } from 'rxjs';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
+  date = new Date();
+  maxDate = new Date(
+    `${this.date.getFullYear()}-${
+      this.date.getMonth() + 1
+    }-${this.date.getDate()+1}`
+  )
+    .toISOString()
+    .slice(0, 10);
+
   @Input() data: Database;
 
   constructor(
@@ -22,8 +31,8 @@ export class FormComponent implements OnInit {
     else
       this.data = {
         author: '',
-        date: new Date(),
         title: '',
+        date: null,
         content: '',
         tags: [],
         viewCount: 0,
