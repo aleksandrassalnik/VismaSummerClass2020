@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Database } from '../databaseTemplate';
 import { FormDataService } from '../form-data.service';
 import { RestService } from '../rest.service';
+import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -33,6 +34,7 @@ export class FormComponent implements OnInit {
   }
 
   save(): void {
+    this.data.tags = JSON.parse(`[${this.data.tags}]`);
     if (this.data.id) {
       this.restService.put(this.data).subscribe();
     } else this.restService.post(this.data).subscribe();
