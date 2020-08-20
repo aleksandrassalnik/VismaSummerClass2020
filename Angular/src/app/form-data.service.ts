@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Database } from './databaseTemplate';
+import { Question } from './iQuestion.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FormDataService {
-  data: Database;
+  public data: Question;
 
-  get(question: Database) {
+  public get(question: Question) {
     this.data = question;
   }
 
-  clear() {
+  public clear() {
     this.data = null;
   }
-
-  constructor() {}
 }

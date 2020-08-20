@@ -2,41 +2,41 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { Database } from './databaseTemplate';
+import { Question } from './iQuestion.interface';
 
 @Injectable({
   providedIn: 'root',
 })
-export class RestService {
+export class Providers {
   private databaseUrl = 'http://localhost:3000/posts';
 
-  get(): Observable<Database[]> {
+  public get(): Observable<Question[]> {
     return this.http
-      .get<Database[]>(this.databaseUrl)
-      .pipe(catchError(this.handleError<Database[]>('get', [])));
+      .get<Question[]>(this.databaseUrl)
+      .pipe(catchError(this.handleError<Question[]>('get', [])));
   }
 
-  put(data: Database): Observable<Database> {
-    return this.http.put<Database>(
+  public put(data: Question): Observable<Question> {
+    return this.http.put<Question>(
       `${this.databaseUrl}/${data.id}`,
       data,
       this.httpOptions
     );
   }
 
-  delete(id: number): Observable<{}> {
+  public delete(id: number): Observable<{}> {
     return this.http
       .delete(`${this.databaseUrl}/${id}`, this.httpOptions)
       .pipe(catchError(this.handleError('delete')));
   }
 
-  post(data: Database): Observable<Database> {
+  public post(data: Question): Observable<Question> {
     return this.http
-      .post<Database>(this.databaseUrl, data, this.httpOptions)
+      .post<Question>(this.databaseUrl, data, this.httpOptions)
       .pipe(catchError(this.handleError('post', data)));
   }
 
-  httpOptions = {
+  private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 

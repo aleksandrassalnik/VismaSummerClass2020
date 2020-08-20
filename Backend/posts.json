@@ -1,17 +1,17 @@
 {
   "posts": [
     {
-      "author": "John Smith",
+      "author": "1",
+      "title": "Serious question nr12345",
       "date": "2020-08-06",
-      "title": "Serious question nr123",
       "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
       "tags": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "9"
+        1,
+        2,
+        3,
+        4,
+        5,
+        98
       ],
       "viewCount": "0",
       "answerCount": "3",

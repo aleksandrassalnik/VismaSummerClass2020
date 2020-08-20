@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Database } from '../databaseTemplate';
+import { Question } from '../iQuestion.interface';
 import { FormDataService } from '../form-data.service';
-import { RestService } from '../rest.service';
-import { VirtualTimeScheduler } from 'rxjs';
+import { Providers } from '../question-resource.service';
+import { take } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -10,50 +11,70 @@ import { VirtualTimeScheduler } from 'rxjs';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  date = new Date();
-  maxDate = new Date(
-    `${this.date.getFullYear()}-${
-      this.date.getMonth() + 1
-    }-${this.date.getDate()+1}`
+  private getData = this.formDataService.data;
+  private date = new Date();
+  public maxDate = new Date(
+    `${this.date.getFullYear()}-${this.date.getMonth() + 1}-${
+      this.date.getDate() + 1
+    }`
   )
     .toISOString()
     .slice(0, 10);
 
-  @Input() data: Database;
+  @Input() data: Question;
 
   constructor(
-    private restService: RestService,
-    public formDataService: FormDataService
+    private questionService: Providers,
+    private formDataService: FormDataService,
+    private router: Router
   ) {}
 
-  ngOnInit(): void {
-    if (this.formDataService.data) this.data = this.formDataService.data;
-    else
-      this.data = {
-        author: '',
-        title: '',
-        date: null,
-        content: '',
-        tags: [],
-        viewCount: 0,
-        answerCount: 0,
-        votesCount: 0,
-        id: null,
-      };
+  public ngOnInit(): void {
+    this.getFormData();
   }
 
-  save(): void {
+  public save(): void {
     this.data.tags = JSON.parse(`[${this.data.tags}]`);
     if (this.data.id) {
-      this.restService.put(this.data).subscribe();
-    } else this.restService.post(this.data).subscribe();
+      this.questionService
+        .put(this.data)
+        .pipe(take(1))
+        .subscribe(() => {
+          this.router.navigateByUrl('/');
+        });
+    } else
+      this.questionService
+        .post(this.data)
+        .pipe(take(1))
+        .subscribe(() => {
+          this.router.navigateByUrl('/');
+        });
   }
 
-  delete(): void {
-    this.restService.delete(this.data.id).subscribe();
+  private delete(): void {
+    this.questionService
+      .delete(this.data.id)
+      .pipe(take(1))
+      .subscribe(() => {
+        this.router.navigateByUrl('/');
+      });
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.formDataService.clear();
+  }
+
+  private getFormData(): void {
+    this.data = {
+      author: this.getData ? this.getData.author : '',
+      title: this.getData ? this.getData.title : '',
+      date: this.getData ? this.getData.date : null,
+      content: this.getData ? this.getData.content : '',
+      tags: this.getData ? this.getData.tags : [],
+      viewCount: this.getData ? this.getData.viewCount : 0,
+      answerCount: this.getData ? this.getData.answerCount : 0,
+      votesCount: this.getData ? this.getData.votesCount : 0,
+      id: this.getData ? this.getData.id : null,
+    };
   }
 }

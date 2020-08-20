@@ -2,25 +2,30 @@
     <a routerLink="">Go back</a>
     <div id="formBackground">
         <form id='question' #questionForm="ngForm" appIdentityRevealed>
-            <label for="author">Author</label><input type="text" id="author" [(ngModel)]="data.author" #author="ngModel"
-                name='author' required>
-            <p id="error" *ngIf="author.touched&&author.errors?.required">Required</p>
-            <label for="date">Date</label><input name="date" type="date" id="date" [(ngModel)]='data.date'
-                #date="ngModel" required [max]="maxDate | date: 'yyyy-MM-dd'">
-            <p id="error" *ngIf="maxDate < data?.date">Sorry you can't write to the future</p>
+            <label for="author">Author</label>
+            <input type="text" id="author" [(ngModel)]="data.author" #author="ngModel" name='author' required>
+            <p class="error" *ngIf="author.touched&&author.errors?.required">Required</p>
 
-            <p id="error" *ngIf="date.touched&&date.errors?.required">Required</p>
-            <label for="title">Title</label><input type="text" id="title" [(ngModel)]='data.title' name='title'
-                #title="ngModel" required>
-            <p id="error" *ngIf="title.touched&&title.errors?.required">Required</p>
+            <label for="date">Date</label>
+            <input name="date" type="date" id="date" [(ngModel)]='data.date' #date="ngModel" required
+                [max]="maxDate | date: 'yyyy-MM-dd'">
+            <p class="error" *ngIf="maxDate < data?.date">Sorry you can't write to the future</p>
+            <p class="error" *ngIf="date.touched&&date.errors?.required">Required</p>
+
+            <label for="title">Title</label>
+            <input type="text" id="title" [(ngModel)]='data.title' name='title' #title="ngModel" required>
+            <p class="error" *ngIf="title.touched&&title.errors?.required">Required</p>
+
             <label for="content">Question</label><textarea name="content" id="content" cols="30" rows="10"
                 [(ngModel)]='data.content' #content="ngModel" required></textarea>
-            <p id="error" *ngIf="content.touched&&content.errors?.required">Required</p>
+            <p class="error" *ngIf="content.touched&&content.errors?.required">Required</p>
+
             <label for="tags">Tags (comma delimited)</label><input id="tags" type="text" [(ngModel)]='data.tags'
                 name='tags'>
-            <button id="newPost" (click)="save()" routerLink="" type="button"
+
+            <button id="newPost" (click)="save()" type="button"
                 [disabled]="questionForm.invalid || maxDate < data?.date">Submit</button>
-            <button *ngIf='data.id' id="delete" routerLink="" type="button" (click)="delete()">Delete</button>
+            <button *ngIf='data.id' id="delete" type="button" (click)="delete()">Delete</button>
         </form>
     </div>
 </div>

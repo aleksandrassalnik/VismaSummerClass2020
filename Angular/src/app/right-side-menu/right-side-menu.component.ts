@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-right-side-menu',
   templateUrl: './right-side-menu.component.html',
   styleUrls: ['./right-side-menu.component.scss'],
 })
-export class RightSideMenuComponent implements OnInit {
+export class RightSideMenuComponent{
   public tags = [
     'Lorem, ipsum',
     'Lorem, ipsum dolor',
@@ -22,8 +22,4 @@ export class RightSideMenuComponent implements OnInit {
     'Lorem ipsum dolor sit',
     'Lorem ipsum dolor, sit amet consectetur adipisicing elit',
   ];
-  
-  constructor() {}
-
-  ngOnInit(): void {}
 }

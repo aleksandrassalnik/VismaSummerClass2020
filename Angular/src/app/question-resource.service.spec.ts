@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RestService } from './rest.service';
+import { Providers } from './question-resource.service';
 
 describe('RestServiceService', () => {
-  let service: RestService;
+  let service: Providers;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(RestService);
+    service = TestBed.inject(Providers);
   });
 
   it('should be created', () => {

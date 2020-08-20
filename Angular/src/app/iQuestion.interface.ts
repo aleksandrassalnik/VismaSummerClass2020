@@ -1,9 +1,9 @@
-export interface Database {
+export interface Question {
   author: string;
   date: Date;
   title: string;
   content: string;
-  tags: object;
+  tags: string[];
   viewCount: number;
   answerCount: number;
   votesCount: number;

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from '../rest.service';
-import { Database } from '../databaseTemplate';
+import { Providers } from '../question-resource.service';
+import { Question } from '../iQuestion.interface';
 import { FormDataService } from '../form-data.service';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-questions',
@@ -9,24 +10,24 @@ import { FormDataService } from '../form-data.service';
   styleUrls: ['./questions.component.scss'],
 })
 export class QuestionsComponent implements OnInit {
-  questions: Database[];
+  public questions: Question[];
 
-  onSelect(question: Database): void {
+  constructor(
+    private questionService: Providers,
+    private formDataService: FormDataService
+  ) { }
+  
+  public ngOnInit(): void {
+    this.get();
+  }
+
+  private onSelect(question: Question): void {
     this.formDataService.get(question);
   }
 
-  get(): void {
-    this.restService
-      .get()
+  private get(): void {
+    this.questionService
+      .get().pipe(take(1))
       .subscribe((questions) => (this.questions = questions));
-  }
-
-  constructor(
-    private restService: RestService,
-    private formDataService: FormDataService
-  ) {}
-
-  ngOnInit(): void {
-    this.get();
   }
 }

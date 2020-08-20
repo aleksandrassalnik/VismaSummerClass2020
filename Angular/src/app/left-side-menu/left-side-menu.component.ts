@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-left-side-menu',
   templateUrl: './left-side-menu.component.html',
   styleUrls: ['./left-side-menu.component.scss'],
 })
-export class LeftSideMenuComponent implements OnInit {
+export class LeftSideMenuComponent {
   public menuButtons = [
     { value: 'New Questions', icon: 'questionsIcon' },
     { value: 'Lorem', icon: 'tagsIcon' },
@@ -15,7 +15,4 @@ export class LeftSideMenuComponent implements OnInit {
   ];
 
   public socialButtonIcons = ['facebook', 'twitter', 'google'];
-  constructor() {}
-
-  ngOnInit(): void {}
 }
