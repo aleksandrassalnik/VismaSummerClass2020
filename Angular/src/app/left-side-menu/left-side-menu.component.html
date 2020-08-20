@@ -7,39 +7,15 @@
     </div>
 
     <div class="bottomBorder">
-        <button class="leftPanelMenuButtons">
-            <i class="questionsIcon menuIcons"></i>
-            <label for="" class="leftPanelMenuLabel">New Questions</label>
-        </button>
-        <button class="leftPanelMenuButtons">
-            <i class="tagsIcon menuIcons"></i>
-            <label class="leftPanelMenuLabel">Lorem.</label>
-        </button>
-
-        <button class="leftPanelMenuButtons">
-            <i class="badgesIcon menuIcons"></i>
-            <label class="leftPanelMenuLabel">Lorem, ipsum.</label>
-        </button>
-
-        <button class="leftPanelMenuButtons">
-            <i class="categoriesIcon menuIcons"></i>
-            <label class="leftPanelMenuLabel">Lorem, ipsum.</label>
-        </button>
-        <button class="leftPanelMenuButtons">
-            <i class="usersIcon menuIcons"></i>
-            <label class="leftPanelMenuLabel">Lorem.</label>
-        </button>
+        <a class="leftPanelMenuButtons" *ngFor='let menuButton of menuButtons'>
+            <i class="{{menuButton.icon}} menuIcons"></i>
+            <span for="" class="leftPanelMenuLabel">{{menuButton.value}}</span>
+        </a>
     </div>
     <div id="socialButtons" class="bottomBorder">
-        <button class="leftPanelSocialButtons">
-            <div class="facebook"></div>
-        </button>
-        <button class="leftPanelSocialButtons">
-            <div class="twitter"></div>
-        </button>
-        <button class="leftPanelSocialButtons">
-            <div class="google"></div>
-        </button>
+        <a class="leftPanelSocialButtons" *ngFor='let socialButtonIcon of socialButtonIcons'>
+            <span class="{{socialButtonIcon}}"></span>
+        </a>
     </div>
 
 </aside>

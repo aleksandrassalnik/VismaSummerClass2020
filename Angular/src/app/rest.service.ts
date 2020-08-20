@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap, subscribeOn } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { Database } from './databaseTemplate';
 
 @Injectable({
@@ -17,20 +17,23 @@ export class RestService {
   }
 
   put(data: Database): Observable<Database> {
-    return this.http
-      .put<Database>(
-        `${this.databaseUrl}/${data.id}`,
-        data,
-        this.httpOptions
-      );
+    return this.http.put<Database>(
+      `${this.databaseUrl}/${data.id}`,
+      data,
+      this.httpOptions
+    );
   }
 
   delete(id: number): Observable<{}> {
-    return this.http.delete(`${this.databaseUrl}/${id}`, this.httpOptions).pipe(catchError(this.handleError('delete')));
+    return this.http
+      .delete(`${this.databaseUrl}/${id}`, this.httpOptions)
+      .pipe(catchError(this.handleError('delete')));
   }
 
   post(data: Database): Observable<Database> {
-    return this.http.post<Database>(this.databaseUrl, data, this.httpOptions).pipe(catchError(this.handleError('post', data)));
+    return this.http
+      .post<Database>(this.databaseUrl, data, this.httpOptions)
+      .pipe(catchError(this.handleError('post', data)));
   }
 
   httpOptions = {

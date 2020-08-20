@@ -40,17 +40,6 @@
       "id": 17
     },
     {
-      "author": "<h1>john</h1>",
-      "date": "2020-08-19T19:12:39.096Z",
-      "title": "",
-      "content": "",
-      "tags": [],
-      "viewCount": 0,
-      "answerCount": 0,
-      "votesCount": 0,
-      "id": 18
-    },
-    {
       "author": "",
       "date": "2020-08-19T19:13:12.112Z",
       "title": "<script>alert('123')</script>",
@@ -86,7 +75,7 @@
     {
       "author": "g",
       "title": "d",
-      "date": "2020-08-31",
+      "date": "2020-07-31",
       "content": "g",
       "tags": [],
       "viewCount": 0,
