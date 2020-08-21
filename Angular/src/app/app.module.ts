@@ -1,34 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
+
+//Components
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LeftSideMenuComponent } from './left-side-menu/left-side-menu.component';
-import { RightSideMenuComponent } from './right-side-menu/right-side-menu.component';
-import { QuestionsComponent } from './questions/questions.component';
 import { FormComponent } from './form/form.component';
 import { MainComponent } from './main/main.component';
+
+//Modules
+import { FormsModule } from '@angular/forms';
+import { MainModule } from './main/main.module';
+
+//Services
+import { FormDataService } from './form-data.service';
+import { QuestionResourceService } from './question-resource.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    LeftSideMenuComponent,
-    RightSideMenuComponent,
-    QuestionsComponent,
     FormComponent,
-    MainComponent
+    MainComponent,
   ],
   imports: [
-    HttpClientModule,
-    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MainModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [FormDataService, QuestionResourceService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

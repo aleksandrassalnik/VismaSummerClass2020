@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Providers } from '../question-resource.service';
+import { QuestionResourceService } from '../question-resource.service';
 import { Question } from '../iQuestion.interface';
 import { FormDataService } from '../form-data.service';
 import { take } from 'rxjs/operators';
@@ -13,7 +13,7 @@ export class QuestionsComponent implements OnInit {
   public questions: Question[];
 
   constructor(
-    private questionService: Providers,
+    private questionService: QuestionResourceService,
     private formDataService: FormDataService
   ) { }
   

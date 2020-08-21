@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Question } from '../iQuestion.interface';
 import { FormDataService } from '../form-data.service';
-import { Providers } from '../question-resource.service';
+import { QuestionResourceService } from '../question-resource.service';
 import { take } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
@@ -24,7 +24,7 @@ export class FormComponent implements OnInit {
   @Input() data: Question;
 
   constructor(
-    private questionService: Providers,
+    private questionService: QuestionResourceService,
     private formDataService: FormDataService,
     private router: Router
   ) {}

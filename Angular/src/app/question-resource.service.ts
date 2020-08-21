@@ -7,7 +7,7 @@ import { Question } from './iQuestion.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class Providers {
+export class QuestionResourceService {
   private databaseUrl = 'http://localhost:3000/posts';
 
   public get(): Observable<Question[]> {
