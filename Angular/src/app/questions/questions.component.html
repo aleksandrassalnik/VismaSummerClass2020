@@ -19,7 +19,7 @@
             </select>
         </div>
     </div>
-    <div *ngFor="let question of questions" class="topic bottomBorder" (click)="onSelect(question)" routerLink="/form">
+    <div *ngFor="let question of questions" class="topic bottomBorder" routerLink="/form/{{question.id}}">
         <section class="question">
             <h1 class="commentHeader">{{question.title}}</h1>
             <p class="comment">{{question.content}}</p>

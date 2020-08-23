@@ -12,22 +12,13 @@ import { FormsModule } from '@angular/forms';
 import { MainModule } from './main/main.module';
 
 //Services
-import { FormDataService } from './form-data.service';
 import { QuestionResourceService } from './question-resource.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FormComponent,
-    MainComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MainModule,
-    FormsModule
-  ],
-  providers: [FormDataService, QuestionResourceService],
+  declarations: [AppComponent, FormComponent, MainComponent],
+  imports: [BrowserModule, AppRoutingModule, MainModule, FormsModule],
+  providers: [QuestionResourceService],
   bootstrap: [AppComponent],
 })
+  
 export class AppModule {}

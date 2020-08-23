@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponent } from './main.component';
 import { LeftSideMenuComponent } from '../left-side-menu/left-side-menu.component';
 import { RightSideMenuComponent } from '../right-side-menu/right-side-menu.component';
 import { QuestionsComponent } from '../questions/questions.component';

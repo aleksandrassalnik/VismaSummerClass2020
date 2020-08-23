@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Question } from '../iQuestion.interface';
-import { FormDataService } from '../form-data.service';
 import { QuestionResourceService } from '../question-resource.service';
 import { take } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  private getData = this.formDataService.data;
+  private questionId = this.route.snapshot.paramMap.get('id');
   private date = new Date();
   public maxDate = new Date(
     `${this.date.getFullYear()}-${this.date.getMonth() + 1}-${
@@ -21,16 +20,28 @@ export class FormComponent implements OnInit {
     .toISOString()
     .slice(0, 10);
 
-  @Input() data: Question;
+  @Input() data: Question = {
+    author: '',
+    title: '',
+    date: null,
+    content: '',
+    tags: [],
+    viewCount: 0,
+    answerCount: 0,
+    votesCount: 0,
+    id: null,
+  };
 
   constructor(
+    private route: ActivatedRoute,
     private questionService: QuestionResourceService,
-    private formDataService: FormDataService,
     private router: Router
   ) {}
 
   public ngOnInit(): void {
-    this.getFormData();
+    if (this.questionId) {
+      this.getFormData(this.questionId);
+    }
   }
 
   public save(): void {
@@ -60,21 +71,10 @@ export class FormComponent implements OnInit {
       });
   }
 
-  public ngOnDestroy(): void {
-    this.formDataService.clear();
-  }
-
-  private getFormData(): void {
-    this.data = {
-      author: this.getData ? this.getData.author : '',
-      title: this.getData ? this.getData.title : '',
-      date: this.getData ? this.getData.date : null,
-      content: this.getData ? this.getData.content : '',
-      tags: this.getData ? this.getData.tags : [],
-      viewCount: this.getData ? this.getData.viewCount : 0,
-      answerCount: this.getData ? this.getData.answerCount : 0,
-      votesCount: this.getData ? this.getData.votesCount : 0,
-      id: this.getData ? this.getData.id : null,
-    };
+  private getFormData(id): void {
+    this.questionService
+      .get(id)
+      .pipe(take(1))
+      .subscribe((questions) => (this.data = Object.assign(questions)));
   }
 }
