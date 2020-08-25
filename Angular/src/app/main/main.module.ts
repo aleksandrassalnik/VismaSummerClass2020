@@ -6,6 +6,8 @@ import { QuestionsComponent } from '../questions/questions.component';
 import { QuestionsModule } from '../questions/questions.module';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { StoreModule } from '@ngrx/store';
+
 
 @NgModule({
   declarations: [
