@@ -16,6 +16,7 @@ import { MainModule } from './main/main.module';
 import { QuestionResourceService } from './question-resource.service';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent, FormComponent, MainComponent],
@@ -29,6 +30,7 @@ import { environment } from '../environments/environment';
       maxAge: 25,
       logOnly: environment.production,
     }),
+    EffectsModule.forRoot([]),
   ],
   providers: [QuestionResourceService],
   bootstrap: [AppComponent],

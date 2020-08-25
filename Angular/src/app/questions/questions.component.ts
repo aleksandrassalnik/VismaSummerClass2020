@@ -26,20 +26,6 @@ export class QuestionsComponent implements OnInit {
   }
 
   loadQuestions() {
-    const questionsObserver = {
-      next: (questions) => {
-        this.store.dispatch(
-          questionActions.loadQuestionsSuccess({ questions: questions })
-        );
-        //this.questions = questions;
-      },
-      error: (err) => {
-        this.store.dispatch(questionActions.loadQuestionsFail({ error: err }));
-        console.log(err);
-      },
-    };
-
-    this.questionService.get().subscribe(questionsObserver);
     this.questions$ = this.store.pipe(select(selectQuestions));
   }
 }
