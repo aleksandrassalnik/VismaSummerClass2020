@@ -10,30 +10,28 @@ import {
 import { environment } from '../../environments/environment';
 import { Question } from '../iQuestion.interface';
 import { loadQuestionsSuccess, loadQuestionsFail } from './question.actions';
+import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 export const questionStateFeatureKey = 'questionState';
 
-export interface QuestionState {
-  questions: Question[];
+export interface QuestionState extends EntityState<Question> {
   error: any;
 }
 
-export const initialState: QuestionState = {
-  questions: undefined,
+export const adapter: EntityAdapter<Question> = createEntityAdapter<Question>();
+
+export const initialState = adapter.getInitialState({
   error: undefined,
-};
+});
 
 export const reducers = createReducer(
   initialState,
   on(loadQuestionsSuccess, (state, action) => {
-    return {
-      questions: action.questions,
-    };
+    return adapter.addAll(action.questions, state);
   }),
   on(loadQuestionsFail, (state, action) => {
     return {
-        questions: state.questions,
-        error: action.error
+      error: action.error,
     };
   })
 );
@@ -44,7 +42,12 @@ export const selectQuestionsFeature = createFeatureSelector<QuestionState>(
 
 export const selectQuestions = createSelector(
   selectQuestionsFeature,
-  (state: QuestionState) => state.questions
+  adapter.getSelectors().selectAll
+);
+
+export const selectError = createSelector(
+  selectQuestionsFeature,
+  (state: QuestionState) => state.error
 );
 
 export const metaReducers: MetaReducer<
