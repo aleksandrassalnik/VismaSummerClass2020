@@ -1,4 +1,4 @@
-export interface Question {
+export class Question {
   author: string;
   date: Date;
   title: string;

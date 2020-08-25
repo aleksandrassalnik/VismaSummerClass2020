@@ -16,7 +16,7 @@ export class QuestionResourceService {
       .get<Question[]>(`${this.databaseUrl}/${id}`);
   }
 
-  public put(data: Question): Observable<Question> {
+  public put(data: Partial<Question>): Observable<Question> {
     return this.http.put<Question>(
       `${this.databaseUrl}/${data.id}`,
       data,

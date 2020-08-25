@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionResourceService } from '../question-resource.service';
 import { Question } from '../iQuestion.interface';
-import { QuestionState, selectQuestions } from '../store';
+import { QuestionState } from '../store/question.reducers';
+import { selectQuestions } from '../store/question.selectors';
 import { Store, select } from '@ngrx/store';
 import * as questionActions from '../store/question.actions';
 import { Observable } from 'rxjs';
@@ -11,8 +12,8 @@ import { Observable } from 'rxjs';
   templateUrl: './questions.component.html',
   styleUrls: ['./questions.component.scss'],
 })
+  
 export class QuestionsComponent implements OnInit {
-  //public questions: Question[];
   questions$: Observable<Question[]>;
 
   constructor(

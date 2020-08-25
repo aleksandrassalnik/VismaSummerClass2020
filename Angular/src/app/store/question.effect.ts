@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map, mergeMap, catchError } from 'rxjs/operators';
+import { map, mergeMap, concatMap, catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { QuestionResourceService } from '../question-resource.service';
 import * as fromQuestionActions from './question.actions';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class QuestionEffects {
@@ -23,7 +24,7 @@ export class QuestionEffects {
     )
   );
 
-  createQuestion$ = createEffect(() => 
+  createQuestion$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromQuestionActions.addQuestion),
       mergeMap((action) =>
@@ -35,12 +36,42 @@ export class QuestionEffects {
             of(fromQuestionActions.addQuestionFail({ error }))
           )
         )
+      ),
+      tap(() => this.router.navigateByUrl('/'))
+    )
+  );
+
+  loadQuestion$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromQuestionActions.loadQuestion),
+      mergeMap((action) =>
+        this.questionResourceService.get(action.id).pipe(
+          map((question) =>
+            fromQuestionActions.loadQuestionSuccess({
+              selectedQuestion: Object.assign(question),
+            })
+          ),
+          catchError((error) =>
+            of(fromQuestionActions.loadQuestionFail({ error }))
+          )
+        )
       )
     )
   );
 
+  updateQuestion$ = createEffect(
+    () => this.actions$.pipe(
+      ofType(fromQuestionActions.updateQuestion),
+      concatMap(action => 
+        this.questionResourceService.put(action.question.changes)
+      ),
+      tap(() => this.router.navigateByUrl('/'))
+    ),{ dispatch: false }
+  );
+
   constructor(
     private actions$: Actions,
-    private questionResourceService: QuestionResourceService
+    private questionResourceService: QuestionResourceService,
+    private router: Router
   ) {}
 }

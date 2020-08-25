@@ -19,7 +19,7 @@ export const loadQuestionsFail = createAction(
 //Load question
 export const loadQuestion = createAction(
   '[Form Component] Load Question',
-  props<{ id: number }>()
+  props<{ id: string }>()
 );
 export const loadQuestionSuccess = createAction(
   '[Form Effect] Load Question Success',
@@ -32,7 +32,7 @@ export const loadQuestionFail = createAction(
 
 //Add question
 export const addQuestion = createAction(
-  '[Form Component] Add Questions',
+  '[Form Component] Add Question',
   props<{ question: Question }>()
 );
 export const addQuestionSuccess = createAction(
@@ -46,20 +46,12 @@ export const addQuestionFail = createAction(
 
 //Edit question
 export const updateQuestion = createAction(
-  '[Form Component] Update Questions',
+  '[Form Component] Update Question',
   props<{ question: Update<Question> }>()
 );
 
 //Delete question
 export const deleteQuestion = createAction(
-  '[Form Component] Load Questions',
-  props<{ id: number }>()
-);
-export const deleteQuestionSuccess = createAction(
-  '[Form Effect] Load Question Success',
-  props<{ id: number }>()
-);
-export const deleteQuestionFail = createAction(
-  '[Form Effect] Load Question Fail',
-  props<{ error: any }>()
+  '[Form Component] Delete Question',
+  props<{ id: string }>()
 );

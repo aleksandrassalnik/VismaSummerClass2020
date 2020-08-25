@@ -3,12 +3,11 @@ import {
   ActionReducerMap,
   createFeatureSelector,
   createSelector,
-  MetaReducer,
   createReducer,
   on,
   State,
 } from '@ngrx/store';
-import { environment } from '../../environments/environment';
+
 import { Question } from '../iQuestion.interface';
 import * as questionActions from './question.actions';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
@@ -25,7 +24,7 @@ export const adapter: EntityAdapter<Question> = createEntityAdapter<Question>();
 
 export const initialState: QuestionState = adapter.getInitialState({
   error: undefined,
-  selectedQuestion: undefined
+  selectedQuestion: undefined,
 });
 
 export const reducers = createReducer(
@@ -40,34 +39,30 @@ export const reducers = createReducer(
     };
   }),
   on(questionActions.addQuestionSuccess, (state, action) => {
-    return adapter.addOne(action.question, state)
+    return adapter.addOne(action.question, state);
   }),
   on(questionActions.addQuestionFail, (state, action) => {
     return {
       ...state,
-      error: action.error
-    }
+      error: action.error,
+    };
+  }),
+  on(questionActions.loadQuestionSuccess, (state, action) => {
+    return {
+      ...state,
+      selectedQuestion: action.selectedQuestion,
+    };
+  }),
+  on(questionActions.loadQuestionFail, (state, action) => {
+    return {
+      ...state,
+      error: action.error,
+    };
+  }),
+  on(questionActions.updateQuestion, (state, action) => {
+    return adapter.updateOne(action.question, state);
+  }),
+  on(questionActions.deleteQuestion, (state, action) => {
+    return adapter.removeOne(action.id, state);
   })
 );
-
-export const selectQuestionsFeature = createFeatureSelector<QuestionState>(
-  questionStateFeatureKey
-);
-
-export const selectQuestions = createSelector(
-  selectQuestionsFeature,
-  adapter.getSelectors().selectAll
-);
-export const selectedQuestion = createSelector(
-  selectQuestionsFeature,
-  (state: QuestionState) => state.selectedQuestion
-)
-
-export const selectError = createSelector(
-  selectQuestionsFeature,
-  (state: QuestionState) => state.error
-);
-
-export const metaReducers: MetaReducer<
-  QuestionState
->[] = !environment.production ? [] : [];

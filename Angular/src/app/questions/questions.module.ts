@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import * as fromQuestionState from '../store';
+import * as fromQuestionState from '../store/question.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { QuestionEffects } from '../store/question.effect';
+import { metaReducers } from '../store/question.selectors';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import { QuestionEffects } from '../store/question.effect';
     StoreModule.forFeature(
       fromQuestionState.questionStateFeatureKey,
       fromQuestionState.reducers,
-      { metaReducers: fromQuestionState.metaReducers }
+      { metaReducers: metaReducers }
     ),
     EffectsModule.forFeature([QuestionEffects])
   ],

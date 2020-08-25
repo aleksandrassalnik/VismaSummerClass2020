@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import * as fromQuestionState from '../store';
+import * as fromQuestionState from '../store/question.reducers';
+import { metaReducers } from '../store/question.selectors';
 import { EffectsModule } from '@ngrx/effects';
 import { QuestionEffects } from '../store/question.effect';
 
@@ -12,7 +13,7 @@ import { QuestionEffects } from '../store/question.effect';
     StoreModule.forFeature(
       fromQuestionState.questionStateFeatureKey,
       fromQuestionState.reducers,
-      { metaReducers: fromQuestionState.metaReducers }
+      { metaReducers: metaReducers }
     ),
     EffectsModule.forFeature([QuestionEffects])
   ]
