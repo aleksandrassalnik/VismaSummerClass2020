@@ -11,7 +11,7 @@ import { MainComponent } from './main/main.component';
 //Modules
 import { FormsModule } from '@angular/forms';
 import { MainModule } from './main/main.module';
-
+import { FormModule } from './form/form.module';
 //Services
 import { QuestionResourceService } from './question-resource.service';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -25,6 +25,7 @@ import { EffectsModule } from '@ngrx/effects';
     AppRoutingModule,
     MainModule,
     FormsModule,
+    FormModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

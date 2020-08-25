@@ -23,6 +23,22 @@ export class QuestionEffects {
     )
   );
 
+  createQuestion$ = createEffect(() => 
+    this.actions$.pipe(
+      ofType(fromQuestionActions.addQuestion),
+      mergeMap((action) =>
+        this.questionResourceService.post(action.question).pipe(
+          map((question) =>
+            fromQuestionActions.addQuestionSuccess({ question })
+          ),
+          catchError((error) =>
+            of(fromQuestionActions.addQuestionFail({ error }))
+          )
+        )
+      )
+    )
+  );
+
   constructor(
     private actions$: Actions,
     private questionResourceService: QuestionResourceService

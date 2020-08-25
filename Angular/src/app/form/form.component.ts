@@ -3,6 +3,9 @@ import { Question } from '../iQuestion.interface';
 import { QuestionResourceService } from '../question-resource.service';
 import { take } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
+import { QuestionState } from '../store/index';
+import { Store } from '@ngrx/store';
+import { addQuestion } from '../store/question.actions';
 
 @Component({
   selector: 'app-form',
@@ -35,7 +38,8 @@ export class FormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private questionService: QuestionResourceService,
-    private router: Router
+    private router: Router,
+    private store: Store<QuestionState>
   ) {}
 
   public ngOnInit(): void {
@@ -53,13 +57,7 @@ export class FormComponent implements OnInit {
         .subscribe(() => {
           this.router.navigateByUrl('/');
         });
-    } else
-      this.questionService
-        .post(this.data)
-        .pipe(take(1))
-        .subscribe(() => {
-          this.router.navigateByUrl('/');
-        });
+    } else this.store.dispatch(addQuestion({ question: this.data }));
   }
 
   private delete(): void {

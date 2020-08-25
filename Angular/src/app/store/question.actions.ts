@@ -36,11 +36,11 @@ export const addQuestion = createAction(
   props<{ question: Question }>()
 );
 export const addQuestionSuccess = createAction(
-  '[Form Effect] Load Question Success',
+  '[Form Effect] Add Question Success',
   props<{ question: Question }>()
 );
 export const addQuestionFail = createAction(
-  '[Form Effect] Load Question Fail',
+  '[Form Effect] Add Question Fail',
   props<{ error: any }>()
 );
 
