@@ -60,13 +60,32 @@ export class QuestionEffects {
   );
 
   updateQuestion$ = createEffect(
-    () => this.actions$.pipe(
-      ofType(fromQuestionActions.updateQuestion),
-      concatMap(action => 
-        this.questionResourceService.put(action.question.changes)
+    () =>
+      this.actions$.pipe(
+        ofType(fromQuestionActions.updateQuestion),
+        concatMap((action) =>
+          this.questionResourceService.put(action.question.changes)
+        ),
+        tap(() => this.router.navigateByUrl('/'))
+      ),
+    { dispatch: false }
+  );
+
+  deleteQuestion$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromQuestionActions.deleteQuestion),
+      mergeMap((action) =>
+        this.questionResourceService.delete(action.id).pipe(
+          map(() =>
+            fromQuestionActions.deleteQuestionSuccess({ id: action.id })
+          ),
+          catchError((error) =>
+            of(fromQuestionActions.deleteQuestionFail({ error }))
+          )
+        )
       ),
       tap(() => this.router.navigateByUrl('/'))
-    ),{ dispatch: false }
+    )
   );
 
   constructor(

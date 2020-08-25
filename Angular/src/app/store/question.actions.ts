@@ -55,3 +55,13 @@ export const deleteQuestion = createAction(
   '[Form Component] Delete Question',
   props<{ id: string }>()
 );
+
+export const deleteQuestionSuccess = createAction(
+  '[Form Component] Delete Question Success',
+  props<{ id: string }>()
+);
+
+export const deleteQuestionFail = createAction(
+  '[Form Component] Delete Question Fail',
+  props<{ error: any }>()
+);

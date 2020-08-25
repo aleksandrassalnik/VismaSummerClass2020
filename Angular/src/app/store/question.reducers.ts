@@ -62,7 +62,13 @@ export const reducers = createReducer(
   on(questionActions.updateQuestion, (state, action) => {
     return adapter.updateOne(action.question, state);
   }),
-  on(questionActions.deleteQuestion, (state, action) => {
+  on(questionActions.deleteQuestionSuccess, (state, action) => {
     return adapter.removeOne(action.id, state);
+  }),
+  on(questionActions.deleteQuestionFail, (state, action) => {
+    return {
+      ...state, 
+      error: action.error
+    }
   })
 );

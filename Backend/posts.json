@@ -2,7 +2,7 @@
   "posts": [
     {
       "author": "5",
-      "title": "5",
+      "title": "59",
       "date": "2020-08-06",
       "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut non, eligendi similique qui officiis fugiat quae dolorem. Nesciunt, inventore veniam. Iste necessitatibus, iure facere pariatur delectus ab quidem laboriosam nulla perferendis, in distinctio. Cumque officia iure assumenda",
       "tags": [
@@ -148,7 +148,7 @@
       "author": "1",
       "title": "Serious question nr8",
       "date": "2020-08-25",
-      "content": "2",
+      "content": "23",
       "tags": [],
       "viewCount": 0,
       "answerCount": 0,
@@ -156,10 +156,10 @@
       "id": 28
     },
     {
-      "author": "5",
-      "title": "5",
-      "date": "2020-08-25",
-      "content": "5",
+      "author": "9",
+      "title": "9",
+      "date": "2020-08-26",
+      "content": "9",
       "tags": [],
       "viewCount": 0,
       "answerCount": 0,
@@ -167,11 +167,13 @@
       "id": 29
     },
     {
-      "author": "5",
-      "title": "5",
+      "author": "1",
+      "title": "1",
       "date": "2020-08-26",
-      "content": "5",
-      "tags": [],
+      "content": "1",
+      "tags": [
+        1
+      ],
       "viewCount": 0,
       "answerCount": 0,
       "votesCount": 0,

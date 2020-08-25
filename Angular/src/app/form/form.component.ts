@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Question } from '../iQuestion.interface';
 import { QuestionResourceService } from '../question-resource.service';
-import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { QuestionState } from '../store/question.reducers';
@@ -10,6 +9,7 @@ import {
   addQuestion,
   loadQuestion,
   updateQuestion,
+  deleteQuestion
 } from '../store/question.actions';
 import { selectedQuestion } from '../store/question.selectors';
 import { Update } from '@ngrx/entity';
@@ -73,18 +73,6 @@ export class FormComponent implements OnInit {
   }
 
   private delete(): void {
-    this.questionService
-      .delete(this.data.id)
-      .pipe(take(1))
-      .subscribe(() => {
-        this.router.navigateByUrl('/');
-      });
-  }
-
-  private getFormData(id): void {
-    this.questionService
-      .get(id)
-      .pipe(take(1))
-      .subscribe((questions) => (this.data = Object.assign(questions)));
+    this.store.dispatch(deleteQuestion({ id: JSON.stringify(this.data.id) }))
   }
 }

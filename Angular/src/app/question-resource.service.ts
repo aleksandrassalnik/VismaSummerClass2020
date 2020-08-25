@@ -24,7 +24,7 @@ export class QuestionResourceService {
     );
   }
 
-  public delete(id: number): Observable<{}> {
+  public delete(id: string): Observable<{}> {
     return this.http
       .delete(`${this.databaseUrl}/${id}`, this.httpOptions)
       .pipe(catchError(this.handleError('delete')));
