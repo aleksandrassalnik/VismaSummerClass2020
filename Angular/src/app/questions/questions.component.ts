@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionResourceService } from '../question-resource.service';
 import { Question } from '../iQuestion.interface';
-import { take } from 'rxjs/operators';
-import { QuestionState } from '../store';
-import { Store } from '@ngrx/store';
+import { QuestionState, selectQuestions } from '../store';
+import { Store, select } from '@ngrx/store';
 import * as questionActions from '../store/question.actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-questions',
@@ -12,12 +12,13 @@ import * as questionActions from '../store/question.actions';
   styleUrls: ['./questions.component.scss'],
 })
 export class QuestionsComponent implements OnInit {
-  public questions: Question[];
+  //public questions: Question[];
+  questions$: Observable<Question[]>;
 
   constructor(
     private questionService: QuestionResourceService,
     private store: Store<QuestionState>
-  ) { }
+  ) {}
 
   public ngOnInit(): void {
     this.store.dispatch(questionActions.loadQuestions());
@@ -30,7 +31,7 @@ export class QuestionsComponent implements OnInit {
         this.store.dispatch(
           questionActions.loadQuestionsSuccess({ questions: questions })
         );
-        this.questions = questions;
+        //this.questions = questions;
       },
       error: (err) => {
         this.store.dispatch(questionActions.loadQuestionsFail({ error: err }));
@@ -39,5 +40,6 @@ export class QuestionsComponent implements OnInit {
     };
 
     this.questionService.get().subscribe(questionsObserver);
+    this.questions$ = this.store.pipe(select(selectQuestions));
   }
 }

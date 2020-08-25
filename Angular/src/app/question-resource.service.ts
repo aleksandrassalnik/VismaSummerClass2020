@@ -13,8 +13,8 @@ export class QuestionResourceService {
 
   public get(id = ''): Observable<Question[]> {
     return this.http
-      .get<Question[]>(`${this.databaseUrl}/${id}`)
-      .pipe(catchError(this.handleError<Question[]>('get', [])));
+      .get<Question[]>(`${this.databaseUrl}/${id}`);
+      // .pipe(catchError(this.handleError<Question[]>('get', [])));
   }
 
   public put(data: Question): Observable<Question> {

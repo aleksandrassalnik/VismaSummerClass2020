@@ -38,6 +38,15 @@ export const reducers = createReducer(
   })
 );
 
+export const selectQuestionsFeature = createFeatureSelector<QuestionState>(
+  questionStateFeatureKey
+);
+
+export const selectQuestions = createSelector(
+  selectQuestionsFeature,
+  (state: QuestionState) => state.questions
+);
+
 export const metaReducers: MetaReducer<
   QuestionState
 >[] = !environment.production ? [] : [];
