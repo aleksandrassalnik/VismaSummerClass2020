@@ -37,6 +37,15 @@ export const reducers = createReducer(
       error: action.error,
     };
   }),
+  on(questionActions.loadNewQuestionsSuccess, (state, action) => {
+    return adapter.addAll(action.questions, state);
+  }),
+  on(questionActions.loadNewQuestionsFail, (state, action) => {
+    return {
+      ...state,
+      error:action.error,
+    }
+  }),
   on(questionActions.addQuestionSuccess, (state, action) => {
     return adapter.addOne(action.question, state);
   }),

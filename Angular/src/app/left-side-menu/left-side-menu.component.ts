@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-left-side-menu',
@@ -7,7 +8,17 @@ import { Component } from '@angular/core';
 })
 export class LeftSideMenuComponent {
   public menuButtons = [
-    { value: 'New Questions', icon: 'questionsIcon' },
+    {
+      value:
+        this.route.snapshot.routeConfig.path === 'main'
+          ? 'New Questions'
+          : 'All Questions',
+      icon: 'questionsIcon',
+      route:
+        this.route.snapshot.routeConfig.path === 'main'
+          ? '../newQuestions'
+          : '../main',
+    },
     { value: 'Lorem', icon: 'tagsIcon' },
     { value: 'Lorem, ipsum', icon: 'badgesIcon' },
     { value: 'Lorem, ipsum', icon: 'categoriesIcon' },
@@ -15,4 +26,6 @@ export class LeftSideMenuComponent {
   ];
 
   public socialButtonIcons = ['facebook', 'twitter', 'google'];
+
+  constructor(private route: ActivatedRoute) {}
 }

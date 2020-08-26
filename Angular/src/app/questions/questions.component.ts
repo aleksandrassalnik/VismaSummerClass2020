@@ -5,6 +5,7 @@ import { selectQuestions } from '../store/question.selectors';
 import { Store, select } from '@ngrx/store';
 import * as questionActions from '../store/question.actions';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-questions',
@@ -16,12 +17,20 @@ export class QuestionsComponent implements OnInit {
   questions$: Observable<Question[]>;
 
   constructor(
-    private store: Store<QuestionState>
+    private store: Store<QuestionState>,
+    private route: ActivatedRoute,
   ) {}
 
   public ngOnInit(): void {
-    this.store.dispatch(questionActions.loadQuestions());
-    this.loadQuestions();
+    if (this.route.snapshot.routeConfig.path === 'main')
+    {
+      this.store.dispatch(questionActions.loadQuestions());
+      this.loadQuestions();
+    }
+    else {
+      this.store.dispatch(questionActions.loadNewQuestions());
+      this.loadQuestions();
+    }
   }
 
   loadQuestions() {

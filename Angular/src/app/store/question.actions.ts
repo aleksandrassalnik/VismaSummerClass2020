@@ -16,6 +16,19 @@ export const loadQuestionsFail = createAction(
   props<{ error: any }>()
 );
 
+//Load new Questions
+export const loadNewQuestions = createAction(
+  '[Questions Component] Load New Questions'
+);
+export const loadNewQuestionsSuccess = createAction(
+  '[Questions Effect] Load New Questions Success',
+  props<{ questions: Question[] }>()
+);
+export const loadNewQuestionsFail = createAction(
+  '[Questions Effect] Load New Questions Fail',
+  props<{ error: any }>()
+);
+
 //Load question
 export const loadQuestion = createAction(
   '[Form Component] Load Question',

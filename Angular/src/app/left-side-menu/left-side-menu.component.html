@@ -7,7 +7,7 @@
     </div>
 
     <div class="bottomBorder">
-        <a class="leftPanelMenuButtons" *ngFor='let menuButton of menuButtons'>
+        <a class="leftPanelMenuButtons" [routerLink]='menuButton.route' *ngFor='let menuButton of menuButtons'>
             <i class="{{menuButton.icon}} menuIcons"></i>
             <span for="" class="leftPanelMenuLabel">{{menuButton.value}}</span>
         </a>
