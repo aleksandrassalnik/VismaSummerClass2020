@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, mergeMap, concatMap, catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { QuestionResourceService } from '../question-resource.service';
 import * as fromQuestionActions from './question.actions';
-import { Router } from '@angular/router';
 
 @Injectable()
 export class QuestionEffects {

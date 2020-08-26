@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionResourceService } from '../question-resource.service';
 import { Question } from '../iQuestion.interface';
 import { QuestionState } from '../store/question.reducers';
 import { selectQuestions } from '../store/question.selectors';
@@ -17,7 +16,6 @@ export class QuestionsComponent implements OnInit {
   questions$: Observable<Question[]>;
 
   constructor(
-    private questionService: QuestionResourceService,
     private store: Store<QuestionState>
   ) {}
 

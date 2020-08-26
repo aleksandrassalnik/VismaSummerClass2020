@@ -11,7 +11,6 @@ import {
 import { Question } from '../iQuestion.interface';
 import * as questionActions from './question.actions';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { Action } from 'rxjs/internal/scheduler/Action';
 
 export const questionStateFeatureKey = 'questionState';
 

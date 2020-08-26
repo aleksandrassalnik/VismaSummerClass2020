@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Question } from '../iQuestion.interface';
-import { QuestionResourceService } from '../question-resource.service';
-import { Observable } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { QuestionState } from '../store/question.reducers';
 import { Store, select } from '@ngrx/store';
 import {
@@ -20,7 +18,6 @@ import { Update } from '@ngrx/entity';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  question$: Observable<Question>;
   private questionId = this.route.snapshot.paramMap.get('id');
   private date = new Date();
   public maxDate = new Date(
@@ -45,8 +42,6 @@ export class FormComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private questionService: QuestionResourceService,
-    private router: Router,
     private store: Store<QuestionState>
   ) {}
 
