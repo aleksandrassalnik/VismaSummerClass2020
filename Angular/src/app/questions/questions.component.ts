@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Question } from '../iQuestion.interface';
 import { QuestionState } from '../store/question.reducers';
-import { selectQuestions } from '../store/question.selectors';
+import { selectNewQuestions, selectQuestions } from '../store/question.selectors';
 import { Store, select } from '@ngrx/store';
 import * as questionActions from '../store/question.actions';
 import { Observable } from 'rxjs';
@@ -25,15 +25,11 @@ export class QuestionsComponent implements OnInit {
     if (this.route.snapshot.routeConfig.path === 'main')
     {
       this.store.dispatch(questionActions.loadQuestions());
-      this.loadQuestions();
+      this.questions$ = this.store.pipe(select(selectQuestions));
     }
     else {
-      this.store.dispatch(questionActions.loadNewQuestions());
-      this.loadQuestions();
+      this.store.dispatch(questionActions.loadQuestions());
+      this.questions$ = this.store.pipe(select(selectNewQuestions));
     }
-  }
-
-  loadQuestions() {
-    this.questions$ = this.store.pipe(select(selectQuestions));
   }
 }

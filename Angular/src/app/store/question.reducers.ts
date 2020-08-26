@@ -1,13 +1,4 @@
-import {
-  ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  createReducer,
-  on,
-  State,
-} from '@ngrx/store';
-
+import { createReducer, on } from '@ngrx/store';
 import { Question } from '../iQuestion.interface';
 import * as questionActions from './question.actions';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
@@ -28,55 +19,36 @@ export const initialState: QuestionState = adapter.getInitialState({
 
 export const reducers = createReducer(
   initialState,
-  on(questionActions.loadQuestionsSuccess, (state, action) => {
-    return adapter.addAll(action.questions, state);
+  on(questionActions.loadQuestionsSuccess, (state, { questions }) => {
+    return adapter.setAll(questions, state);
   }),
-  on(questionActions.loadQuestionsFail, (state, action) => {
+  on(questionActions.addQuestionSuccess, (state, { question }) => {
+    return adapter.setOne(question, state);
+  }),
+  on(questionActions.loadQuestionSuccess, (state, { selectedQuestion }) => {
     return {
       ...state,
-      error: action.error,
+      selectedQuestion: selectedQuestion,
     };
   }),
-  on(questionActions.loadNewQuestionsSuccess, (state, action) => {
-    return adapter.addAll(action.questions, state);
+  on(questionActions.updateQuestion, (state, { question }) => {
+    return adapter.updateOne(question, state);
   }),
-  on(questionActions.loadNewQuestionsFail, (state, action) => {
-    return {
-      ...state,
-      error:action.error,
+  on(questionActions.deleteQuestionSuccess, (state, { id }) => {
+    return adapter.removeOne(id, state);
+  }),
+  on(
+    questionActions.deleteQuestionFail,
+    questionActions.loadQuestionFail,
+    questionActions.addQuestionFail,
+    questionActions.loadQuestionsFail,
+    (state, action) => {
+      return {
+        ...state,
+        error: action.error,
+      };
     }
-  }),
-  on(questionActions.addQuestionSuccess, (state, action) => {
-    return adapter.addOne(action.question, state);
-  }),
-  on(questionActions.addQuestionFail, (state, action) => {
-    return {
-      ...state,
-      error: action.error,
-    };
-  }),
-  on(questionActions.loadQuestionSuccess, (state, action) => {
-    return {
-      ...state,
-      selectedQuestion: action.selectedQuestion,
-    };
-  }),
-  on(questionActions.loadQuestionFail, (state, action) => {
-    return {
-      ...state,
-      error: action.error,
-    };
-  }),
-  on(questionActions.updateQuestion, (state, action) => {
-    return adapter.updateOne(action.question, state);
-  }),
-  on(questionActions.deleteQuestionSuccess, (state, action) => {
-    return adapter.removeOne(action.id, state);
-  }),
-  on(questionActions.deleteQuestionFail, (state, action) => {
-    return {
-      ...state, 
-      error: action.error
-    }
-  })
+  )
 );
+
+export const { selectAll } = adapter.getSelectors();

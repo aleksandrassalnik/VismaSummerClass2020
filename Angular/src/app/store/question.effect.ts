@@ -24,34 +24,6 @@ export class QuestionEffects {
     )
   );
 
-  loadNewQuestions$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(fromQuestionActions.loadNewQuestions),
-      mergeMap(() =>
-        this.questionResourceService.get().pipe(
-          map(
-            (questions) => {
-              const dateNow = new Date().toISOString().slice(0, 10);
-              return fromQuestionActions.loadNewQuestionsSuccess({
-                questions: questions.filter((question) => {
-                  if (
-                    new Date(question.date).toISOString().slice(0, 10) ===
-                    dateNow
-                  ) {
-                    return question;
-                  }
-                }),
-              });
-            },
-            catchError((error) =>
-              of(fromQuestionActions.loadNewQuestionsFail({ error }))
-            )
-          )
-        )
-      )
-    )
-  );
-
   createQuestion$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromQuestionActions.addQuestion),

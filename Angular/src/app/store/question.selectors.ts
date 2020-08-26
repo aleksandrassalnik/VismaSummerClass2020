@@ -1,13 +1,8 @@
-import {
-  createFeatureSelector,
-  createSelector,
-  MetaReducer,
-} from '@ngrx/store';
-import { environment } from '../../environments/environment';
+import { createFeatureSelector, createSelector, select } from '@ngrx/store';
 import {
   QuestionState,
   questionStateFeatureKey,
-  adapter,
+  selectAll,
 } from './question.reducers';
 
 export const selectQuestionsFeature = createFeatureSelector<QuestionState>(
@@ -16,8 +11,22 @@ export const selectQuestionsFeature = createFeatureSelector<QuestionState>(
 
 export const selectQuestions = createSelector(
   selectQuestionsFeature,
-  adapter.getSelectors().selectAll
+  selectAll
 );
+
+export const selectNewQuestions = createSelector(
+  selectQuestionsFeature,
+  (data) => {
+    const dateNow = new Date().toISOString().slice(0, 10);
+    const question = Object.values(data.entities);
+    return question.filter((question) => {
+      if (new Date(question.date).toISOString().slice(0, 10) === dateNow) {
+        return question;
+      }
+    });
+  }
+);
+
 export const selectedQuestion = createSelector(
   selectQuestionsFeature,
   (state: QuestionState) => state.selectedQuestion
@@ -27,5 +36,3 @@ export const selectError = createSelector(
   selectQuestionsFeature,
   (state: QuestionState) => state.error
 );
-
-export const metaReducers: MetaReducer<QuestionState>[] = !environment.production ? [] : [];

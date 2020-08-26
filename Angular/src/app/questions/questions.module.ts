@@ -5,7 +5,6 @@ import { StoreModule } from '@ngrx/store';
 import * as fromQuestionState from '../store/question.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { QuestionEffects } from '../store/question.effect';
-import { metaReducers } from '../store/question.selectors';
 
 @NgModule({
   imports: [
@@ -13,8 +12,7 @@ import { metaReducers } from '../store/question.selectors';
     HttpClientModule,
     StoreModule.forFeature(
       fromQuestionState.questionStateFeatureKey,
-      fromQuestionState.reducers,
-      { metaReducers: metaReducers }
+      fromQuestionState.reducers
     ),
     EffectsModule.forFeature([QuestionEffects])
   ],

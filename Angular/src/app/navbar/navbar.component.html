@@ -12,13 +12,13 @@
 
         <div id="navButtons">
             <i class="dropdownIcon menuIcons"></i>
-            <div id="navbarDropdownContent">
-                <div class="navButton" *ngFor='let navButton of navButtons'>{{navButton}}</div>
-            </div>
+            <ul id="navbarDropdownContent">
+                <li class="navButton" *ngFor='let navButton of navButtons'>{{navButton}}</li>
+            </ul>
         </div>
 
-        <ul id="navRegister">
-            <li class="clickableText truncateText">Login or Register</li>
-        </ul>
+        <div id="navRegister">
+            <span class="clickableText truncateText">Login or Register</span>
+        </div>
     </nav>
 </header>
